@@ -32,48 +32,63 @@ export default function Vision() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:items-start">
-                <div className="relative aspect-video w-full overflow-hidden rounded-lg shadow-xl">
-                     <Image
-                        src="https://i.ibb.co/Ldvg9Gr4/Gemini-Generated-Image-orkxtdorkxtdorkx.png"
-                        alt="Abstract representation of future technology"
-                        fill
-                        className="object-cover"
-                        data-ai-hint="future technology"
-                    />
-                </div>
-                <div className="flex flex-col">
-                    <Accordion type="single" collapsible defaultValue="item-1" className="w-full">
-                    <AccordionItem value="item-1" className="border-b-secondary/50">
-                        <AccordionTrigger className="text-left hover:no-underline">
-                        <div className="flex items-center gap-4">
-                            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-                                <BrainCircuit className="h-6 w-6 text-primary" />
-                            </div>
-                            <span className="font-headline text-xl font-semibold text-primary">{sunshot.name}</span>
+            <div className="w-full">
+                <Accordion type="single" collapsible defaultValue="item-1" className="w-full">
+                <AccordionItem value="item-1" className="border-b-secondary/50">
+                    <AccordionTrigger className="text-left hover:no-underline">
+                    <div className="flex items-center gap-4">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+                            <BrainCircuit className="h-6 w-6 text-primary" />
                         </div>
-                        </AccordionTrigger>
-                        <AccordionContent className="pt-2 text-base text-muted-foreground bg-card/30 p-4 rounded-md">
-                            <p className="font-medium text-primary/90">{sunshot.concept}</p>
-                            <p className="mt-2">{sunshot.vision}</p>
-                        </AccordionContent>
-                    </AccordionItem>
-                    <AccordionItem value="item-2" className="border-b-secondary/50">
-                        <AccordionTrigger className="text-left hover:no-underline">
-                         <div className="flex items-center gap-4">
-                            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-                                <Cpu className="h-6 w-6 text-primary" />
+                        <span className="font-headline text-xl font-semibold text-primary">{sunshot.name}</span>
+                    </div>
+                    </AccordionTrigger>
+                    <AccordionContent className="pt-2 text-base text-muted-foreground bg-card/30 p-4 rounded-md">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                            <div className="space-y-2">
+                                <p className="font-medium text-primary/90">{sunshot.concept}</p>
+                                <p>{sunshot.vision}</p>
                             </div>
-                            <span className="font-headline text-xl font-semibold text-primary">{moonshot.name}</span>
+                            <div className="relative aspect-video w-full overflow-hidden rounded-lg shadow-lg">
+                                <Image
+                                    src="https://i.postimg.cc/85ZghZh1/BCI.png"
+                                    alt="Project Sunshot: Brain-Computer Interface"
+                                    fill
+                                    className="object-cover"
+                                    data-ai-hint="brain computer interface"
+                                />
+                            </div>
                         </div>
-                        </AccordionTrigger>
-                        <AccordionContent className="pt-2 text-base text-muted-foreground bg-card/30 p-4 rounded-md">
-                            <p className="font-medium text-primary/90">{moonshot.concept}</p>
-                            <p className="mt-2">{moonshot.vision}</p>
-                        </AccordionContent>
-                    </AccordionItem>
-                    </Accordion>
-                </div>
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2" className="border-b-secondary/50">
+                    <AccordionTrigger className="text-left hover:no-underline">
+                     <div className="flex items-center gap-4">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+                            <Cpu className="h-6 w-6 text-primary" />
+                        </div>
+                        <span className="font-headline text-xl font-semibold text-primary">{moonshot.name}</span>
+                    </div>
+                    </AccordionTrigger>
+                    <AccordionContent className="pt-2 text-base text-muted-foreground bg-card/30 p-4 rounded-md">
+                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                            <div className="space-y-2">
+                                <p className="font-medium text-primary/90">{moonshot.concept}</p>
+                                <p>{moonshot.vision}</p>
+                            </div>
+                            <div className="relative aspect-video w-full overflow-hidden rounded-lg shadow-lg">
+                                <Image
+                                    src="https://i.postimg.cc/qqgVQ2L2/PLA.png"
+                                    alt="Project Moonshot: Photonic AI Accelerator"
+                                    fill
+                                    className="object-cover"
+                                    data-ai-hint="photonic chip"
+                                />
+                            </div>
+                        </div>
+                    </AccordionContent>
+                </AccordionItem>
+                </Accordion>
             </div>
           </div>
         </GlassSurface>
