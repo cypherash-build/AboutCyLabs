@@ -1,0 +1,9 @@
+.text-block {
+  font-family: monospace;
+  color: hsl(var(--muted-foreground));
+}
+
+.char {
+  will-change: transform;
+  display: inline-block;
+}

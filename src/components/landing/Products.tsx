@@ -14,7 +14,10 @@ import { useAudience } from "./AudienceContext";
 import { content } from "@/lib/content";
 import GlassSurface from "../ui/GlassSurface";
 import { AnimatePresence, motion } from "framer-motion";
-import { X, HelpCircle, Clock, Users, Award } from "lucide-react";
+import { X, HelpCircle, Clock, Award } from "lucide-react";
+import ScrambledText from "../ui/ScrambledText";
+import "../ui/ScrambledText.css";
+
 
 type ProductId = "cypherkey" | "cypheri" | "cypherb" | "kitab";
 
@@ -65,7 +68,7 @@ export default function Products() {
                     key="product-grid"
                     className="grid grid-cols-1 gap-8 md:grid-cols-2"
                     initial={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
+                    exit={{ opacity: 0, display: 'none' }}
                     transition={{ duration: 0.2 }}
                   >
                     {products.map((product) => (
@@ -94,8 +97,14 @@ export default function Products() {
                                 {product.name}
                               </CardTitle>
                             </div>
-                            <CardDescription className="text-base">
-                              {product.description[audience]}
+                            <CardDescription className="text-base min-h-[100px]">
+                              {product.id === 'cypherkey' ? (
+                                <ScrambledText>
+                                  {product.description[audience]}
+                                </ScrambledText>
+                              ) : (
+                                product.description[audience]
+                              )}
                             </CardDescription>
                           </CardHeader>
                           <CardContent className="flex flex-grow flex-col justify-end">
