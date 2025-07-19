@@ -1,0 +1,647 @@
+diff --git a/node_modules/@react-three/fiber/dist/index.mjs b/node_modules/@react-three/fiber/dist/index.mjs
+index 9263152..73fc94c 100644
+--- a/node_modules/@react-three/fiber/dist/index.mjs
++++ b/node_modules/@react-three/fiber/dist/index.mjs
+@@ -1,5 +1,5 @@
+ import * as React from 'react';
+-import { unstable_createEventHandle } from 'react-dom';
++import { unstable_createEventHandle } from 'react-dom/client';
+ import { act, flushSync } from 'react-dom/client';
+ import { version } from 'react-dom/package.json';
+ import * as _reconciler from 'react-reconciler';
+diff --git a/node_modules/@react-three/fiber/dist/react-three-fiber.esm.js b/node_modules/@react-three/fiber/dist/react-three-fiber.esm.js
+index 7a578ce..d8174df 100644
+--- a/node_modules/@react-three/fiber/dist/react-three-fiber.esm.js
++++ b/node_modules/@react-three/fiber/dist/react-three-fiber.esm.js
+@@ -1,6 +1,6 @@
+ import * as React from 'react';
+ import { useLayoutEffect, useRef, useState, useMemo, useEffect, useContext, createContext, useCallback, startTransition, Children, unstable_Offscreen, forwardRef } from 'react';
+-import { unstable_createEventHandle } from 'react-dom';
++import { unstable_createEventHandle } from 'react-dom/client';
+ import { act, flushSync } from 'react-dom/client';
+ import { version } from 'react-dom/package.json';
+ import * as _reconciler from 'react-reconciler';
+diff --git a/node_modules/@react-three/fiber/package.json b/node_modules/@react-three/fiber/package.json
+index 6f33d7b..a19a3b9 100644
+--- a/node_modules/@react-three/fiber/package.json
++++ b/node_modules/@react-three/fiber/package.json
+@@ -66,7 +66,7 @@
+     "react": ">=18.0",
+     "react-dom": ">=18.0",
+     "react-reconciler": "0.29.0",
+-    "three": ">=0.137"
++    "three": ">=0.158.0"
+   },
+   "devDependencies": {
+     "@babel/core": "7.23.5",
+@@ -99,7 +99,7 @@
+     "@types/react-reconciler": "0.28.7",
+     "@types/scheduler": "0.16.8",
+     "@types/three": "0.158.3",
+-    "react-reconciler": "0.29.0",
++    "react-reconciler": "0.29.0"
+   },
+   "peerDependenciesMeta": {
+     "@types/react": {
+@@ -107,7 +107,6 @@
+     },
+     "@types/three": {
+       "optional": true
+-    },
+-    "react-reconciler": {
+-      "optional": true
+     }
+   }
+ }
+diff --git a/node_modules/@react-three/fiber/dist/index-8a88b89d.mjs b/node_modules/@react-three/fiber/dist/index-8a88b89d.mjs
+index a46a960..63510c4 100644
+--- a/node_modules/@react-three/fiber/dist/index-8a88b89d.mjs
++++ b/node_modules/@react-three/fiber/dist/index-8a88b89d.mjs
+@@ -1,5 +1,5 @@
+ import * as React from 'react';
+-import { unstable_createEventHandle } from 'react-dom';
++import { unstable_createEventHandle } from 'react-dom/client';
+ import { act, flushSync } from 'react-dom/client';
+ import { version } from 'react-dom/package.json';
+ import * as _reconciler from 'react-reconciler';
+diff --git a/node_modules/@react-three/fiber/dist/native-ea35d933.mjs b/node_modules/@react-three/fiber/dist/native-ea35d933.mjs
+index ff945f3..f9ef402 100644
+--- a/node_modules/@react-three/fiber/dist/native-ea35d933.mjs
++++ b/node_modules/@react-three/fiber/dist/native-ea35d933.mjs
+@@ -1,5 +1,4 @@
+ import * as React from 'react';
+-import { unstable_createEventHandle } from 'react-dom';
+ import { act, flushSync } from 'react-dom/client';
+ import { version } from 'react-dom/package.json';
+ import * as _reconciler from 'react-reconciler';
+diff --git a/node_modules/@react-three/fiber/dist/events-b1f3c301.mjs b/node_modules/@react-three/fiber/dist/events-b1f3c301.mjs
+index f302517..f646016 100644
+--- a/node_modules/@react-three/fiber/dist/events-b1f3c301.mjs
++++ b/node_modules/@react-three/fiber/dist/events-b1f3c301.mjs
+@@ -1,5 +1,5 @@
+ import * as React from 'react';
+-import { unstable_createEventHandle } from 'react-dom';
++import { unstable_createEventHandle } from 'react-dom/client';
+ import { act, flushSync } from 'react-dom/client';
+ import { version } from 'react-dom/package.json';
+ import * as _reconciler from 'react-reconciler';
+diff --git a/node_modules/@react-three/fiber/dist/loop-a41c667e.mjs b/node_modules/@react-three/fiber/dist/loop-a41c667e.mjs
+index a4963bd..ac30453 100644
+--- a/node_modules/@react-three/fiber/dist/loop-a41c667e.mjs
++++ b/node_modules/@react-three/fiber/dist/loop-a41c667e.mjs
+@@ -1,5 +1,5 @@
+ import * as React from 'react';
+-import { unstable_createEventHandle } from 'react-dom';
++import { unstable_createEventHandle } from 'react-dom/client';
+ import { act, flushSync } from 'react-dom/client';
+ import { version } from 'react-dom/package.json';
+ import * as _reconciler from 'react-reconciler';
+diff --git a/node_modules/@react-three/fiber/dist/web-d55c67e9.mjs b/node_modules/@react-three/fiber/dist/web-d55c67e9.mjs
+index 47526ae..c7c88b3 100644
+--- a/node_modules/@react-three/fiber/dist/web-d55c67e9.mjs
++++ b/node_modules/@react-three/fiber/dist/web-d55c67e9.mjs
+@@ -1,5 +1,5 @@
+ import * as React from 'react';
+-import { unstable_createEventHandle } from 'react-dom';
++import { unstable_createEventHandle } from 'react-dom/client';
+ import { act, flushSync } from 'react-dom/client';
+ import { version } from 'react-dom/package.json';
+ import * as _reconciler from 'react-reconciler';
+diff --git a/node_modules/@react-three/fiber/dist/core/loop.js b/node_modules/@react-three/fiber/dist/core/loop.js
+index c706915..328c68f 100644
+--- a/node_modules/@react-three/fiber/dist/core/loop.js
++++ b/node_modules/@react-three/fiber/dist/core/loop.js
+@@ -23,7 +23,7 @@ function createLoop(roots) {
+         if (root.vr) {
+             const session = gl.xr.getSession();
+             if (session) {
+-                session.requestAnimationFrame(loop);
++                session.requestAnimationFrame(frameLoop);
+                 return;
+             }
+         }
+diff --git a/node_modules/@react-three/fiber/dist/index.js b/node_modules/@react-three/fiber/dist/index.js
+index f30f7b0..c9a9d70 100644
+--- a/node_modules/@react-three/fiber/dist/index.js
++++ b/node_modules/@react-three/fiber/dist/index.js
+@@ -10,7 +10,7 @@ var suspense = require('@react-three/drei/suspense');
+ var React = require('react');
+ var zustand = require('zustand');
+ var context = require('@react-three/drei/context');
+-var ReactDOM = require('react-dom');
++var ReactDOM = require('react-dom/client');
+ var client = require('react-dom/client');
+ var packageJson = require('react-dom/package.json');
+ var _reconciler = require('react-reconciler');
+diff --git a/node_modules/@react-three/fiber/dist/index.cjs b/node_modules/@react-three/fiber/dist/index.cjs
+index 548c772..26058d8 100644
+--- a/node_modules/@react-three/fiber/dist/index.cjs
++++ b/node_modules/@react-three/fiber/dist/index.cjs
+@@ -10,7 +10,7 @@ var suspense = require('@react-three/drei/suspense');
+ var React = require('react');
+ var zustand = require('zustand');
+ var context = require('@react-three/drei/context');
+-var ReactDOM = require('react-dom');
++var ReactDOM = require('react-dom/client');
+ var client = require('react-dom/client');
+ var packageJson = require('react-dom/package.json');
+ var _reconciler = require('react-reconciler');
+diff --git a/node_modules/@react-three/fiber/dist/core/renderer.js b/node_modules/@react-three/fiber/dist/core/renderer.js
+index efd47a0..a6ac1c6 100644
+--- a/node_modules/@react-three/fiber/dist/core/renderer.js
++++ b/node_modules/@react-three/fiber/dist/core/renderer.js
+@@ -1,7 +1,9 @@
+ 'use strict';
+ 
+ var React = require('react');
+-var ReactDOM = require('react-dom');
++var ReactDOM = require('react-dom/client');
+ var _reconciler = require('react-reconciler');
+ var three = require('three');
+ var events = require('./events.js');
+@@ -14,7 +16,7 @@
+ let reconciler;
+ function createRenderer(roots) {
+     if (!reconciler) {
+-        reconciler = _reconciler(reconciler$1(roots));
++        reconciler = reconciler$1(roots);
+     }
+     return reconciler;
+ }
+diff --git a/node_modules/@react-three/fiber/dist/native/index.js b/node_modules/@react-three/fiber/dist/native/index.js
+index 92c813a..57b98d3 100644
+--- a/node_modules/@react-three/fiber/dist/native/index.js
++++ b/node_modules/@react-three/fiber/dist/native/index.js
+@@ -9,7 +9,6 @@
+ var React = require('react');
+ var zustand = require('zustand');
+ var context = require('@react-three/drei/context');
+-var ReactDOM = require('react-dom');
+ var client = require('react-dom/client');
+ var packageJson = require('react-dom/package.json');
+ var _reconciler = require('react-reconciler');
+diff --git a/node_modules/@react-three/fiber/dist/web/index.js b/node_modules/@react-three/fiber/dist/web/index.js
+index c68393e..7f3b8b9 100644
+--- a/node_modules/@react-three/fiber/dist/web/index.js
++++ b/node_modules/@react-three/fiber/dist/web/index.js
+@@ -1,7 +1,7 @@
+ 'use strict';
+ 
+ var React = require('react');
+-var ReactDOM = require('react-dom');
++var ReactDOM = require('react-dom/client');
+ var _reconciler = require('react-reconciler');
+ var three = require('three');
+ var events = require('../core/events.js');
+diff --git a/node_modules/@react-three/fiber/dist/core/store.js b/node_modules/@react-three/fiber/dist/core/store.js
+index a2d95e7..015f606 100644
+--- a/node_modules/@react-three/fiber/dist/core/store.js
++++ b/node_modules/@react-three/fiber/dist/core/store.js
+@@ -1,6 +1,6 @@
+ 'use strict';
+ 
+-var ReactDOM = require('react-dom');
++var ReactDOM = require('react-dom/client');
+ var zustand = require('zustand');
+ var context = require('@react-three/drei/context');
+ var three = require('three');
+diff --git a/node_modules/@react-three/fiber/dist/core/events.js b/node_modules/@react-three/fiber/dist/core/events.js
+index f30f7b0..c9a9d70 100644
+--- a/node_modules/@react-three/fiber/dist/core/events.js
++++ b/node_modules/@react-three/fiber/dist/core/events.js
+@@ -10,7 +10,7 @@ var suspense = require('@react-three/drei/suspense');
+ var React = require('react');
+ var zustand = require('zustand');
+ var context = require('@react-three/drei/context');
+-var ReactDOM = require('react-dom');
++var ReactDOM = require('react-dom/client');
+ var client = require('react-dom/client');
+ var packageJson = require('react-dom/package.json');
+ var _reconciler = require('react-reconciler');
+diff --git a/node_modules/@react-three/fiber/dist/core/utils.js b/node_modules/@react-three/fiber/dist/core/utils.js
+index f30f7b0..c9a9d70 100644
+--- a/node_modules/@react-three/fiber/dist/core/utils.js
++++ b/node_modules/@react-three/fiber/dist/core/utils.js
+@@ -10,7 +10,7 @@ var suspense = require('@react-three/drei/suspense');
+ var React = require('react');
+ var zustand = require('zustand');
+ var context = require('@react-three/drei/context');
+-var ReactDOM = require('react-dom');
++var ReactDOM = require('react-dom/client');
+ var client = require('react-dom/client');
+ var packageJson = require('react-dom/package.json');
+ var _reconciler = require('react-reconciler');
+diff --git a/node_modules/@react-three/fiber/dist/canvas.js b/node_modules/@react-three/fiber/dist/canvas.js
+index f30f7b0..c9a9d70 100644
+--- a/node_modules/@react-three/fiber/dist/canvas.js
++++ b/node_modules/@react-three/fiber/dist/canvas.js
+@@ -10,7 +10,7 @@ var suspense = require('@react-three/drei/suspense');
+ var React = require('react');
+ var zustand = require('zustand');
+ var context = require('@react-three/drei/context');
+-var ReactDOM = require('react-dom');
++var ReactDOM = require('react-dom/client');
+ var client = require('react-dom/client');
+ var packageJson = require('react-dom/package.json');
+ var _reconciler = require('react-reconciler');
+diff --git a/node_modules/@react-three/fiber/dist/hooks.js b/node_modules/@react-three/fiber/dist/hooks.js
+index f30f7b0..c9a9d70 100644
+--- a/node_modules/@react-three/fiber/dist/hooks.js
++++ b/node_modules/@react-three/fiber/dist/hooks.js
+@@ -10,7 +10,7 @@ var suspense = require('@react-three/drei/suspense');
+ var React = require('react');
+ var zustand = require('zustand');
+ var context = require('@react-three/drei/context');
+-var ReactDOM = require('react-dom');
++var ReactDOM = require('react-dom/client');
+ var client = require('react-dom/client');
+ var packageJson = require('react-dom/package.json');
+ var _reconciler = require('react-reconciler');
+diff --git a/node_modules/@react-three/fiber/dist/native.js b/node_modules/@react-three/fiber/dist/native.js
+index f30f7b0..c9a9d70 100644
+--- a/node_modules/@react-three/fiber/dist/native.js
++++ b/node_modules/@react-three/fiber/dist/native.js
+@@ -10,7 +10,7 @@ var suspense = require('@react-three/drei/suspense');
+ var React = require('react');
+ var zustand = require('zustand');
+ var context = require('@react-three/drei/context');
+-var ReactDOM = require('react-dom');
++var ReactDOM = require('react-dom/client');
+ var client = require('react-dom/client');
+ var packageJson = require('react-dom/package.json');
+ var _reconciler = require('react-reconciler');
+diff --git a/node_modules/@react-three/fiber/dist/web.js b/node_modules/@react-three/fiber/dist/web.js
+index f30f7b0..c9a9d70 100644
+--- a/node_modules/@react-three/fiber/dist/web.js
++++ b/node_modules/@react-three/fiber/dist/web.js
+@@ -10,7 +10,7 @@ var suspense = require('@react-three/drei/suspense');
+ var React = require('react');
+ var zustand = require('zustand');
+ var context = require('@react-three/drei/context');
+-var ReactDOM = require('react-dom');
++var ReactDOM = require('react-dom/client');
+ var client = require('react-dom/client');
+ var packageJson = require('react-dom/package.json');
+ var _reconciler = require('react-reconciler');
+diff --git a/node_modules/@react-three/fiber/dist/core/store.cjs b/node_modules/@react-three/fiber/dist/core/store.cjs
+index 2110c9d..d37a8b4 100644
+--- a/node_modules/@react-three/fiber/dist/core/store.cjs
++++ b/node_modules/@react-three/fiber/dist/core/store.cjs
+@@ -1,6 +1,6 @@
+ 'use strict';
+ 
+-var ReactDOM = require('react-dom');
++var ReactDOM = require('react-dom/client');
+ var zustand = require('zustand');
+ var context = require('@react-three/drei/context');
+ var three = require('three');
+diff --git a/node_modules/@react-three/fiber/dist/core/events.cjs b/node_modules/@react-three/fiber/dist/core/events.cjs
+index 548c772..26058d8 100644
+--- a/node_modules/@react-three/fiber/dist/core/events.cjs
++++ b/node_modules/@react-three/fiber/dist/core/events.cjs
+@@ -10,7 +10,7 @@ var suspense = require('@react-three/drei/suspense');
+ var React = require('react');
+ var zustand = require('zustand');
+ var context = require('@react-three/drei/context');
+-var ReactDOM = require('react-dom');
++var ReactDOM = require('react-dom/client');
+ var client = require('react-dom/client');
+ var packageJson = require('react-dom/package.json');
+ var _reconciler = require('react-reconciler');
+diff --git a/node_modules/@react-three/fiber/dist/core/utils.cjs b/node_modules/@react-three/fiber/dist/core/utils.cjs
+index 548c772..26058d8 100644
+--- a/node_modules/@react-three/fiber/dist/core/utils.cjs
++++ b/node_modules/@react-three/fiber/dist/core/utils.cjs
+@@ -10,7 +10,7 @@ var suspense = require('@react-three/drei/suspense');
+ var React = require('react');
+ var zustand = require('zustand');
+ var context = require('@react-three/drei/context');
+-var ReactDOM = require('react-dom');
++var ReactDOM = require('react-dom/client');
+ var client = require('react-dom/client');
+ var packageJson = require('react-dom/package.json');
+ var _reconciler = require('react-reconciler');
+diff --git a/node_modules/@react-three/fiber/dist/canvas.cjs b/node_modules/@react-three/fiber/dist/canvas.cjs
+index 548c772..26058d8 100644
+--- a/node_modules/@react-three/fiber/dist/canvas.cjs
++++ b/node_modules/@react-three/fiber/dist/canvas.cjs
+@@ -10,7 +10,7 @@ var suspense = require('@react-three/drei/suspense');
+ var React = require('react');
+ var zustand = require('zustand');
+ var context = require('@react-three/drei/context');
+-var ReactDOM = require('react-dom');
++var ReactDOM = require('react-dom/client');
+ var client = require('react-dom/client');
+ var packageJson = require('react-dom/package.json');
+ var _reconciler = require('react-reconciler');
+diff --git a/node_modules/@react-three/fiber/dist/hooks.cjs b/node_modules/@react-three/fiber/dist/hooks.cjs
+index 548c772..26058d8 100644
+--- a/node_modules/@react-three/fiber/dist/hooks.cjs
++++ b/node_modules/@react-three/fiber/dist/hooks.cjs
+@@ -10,7 +10,7 @@ var suspense = require('@react-three/drei/suspense');
+ var React = require('react');
+ var zustand = require('zustand');
+ var context = require('@react-three/drei/context');
+-var ReactDOM = require('react-dom');
++var ReactDOM = require('react-dom/client');
+ var client = require('react-dom/client');
+ var packageJson = require('react-dom/package.json');
+ var _reconciler = require('react-reconciler');
+diff --git a/node_modules/@react-three/fiber/dist/native.cjs b/node_modules/@react-three/fiber/dist/native.cjs
+index 548c772..26058d8 100644
+--- a/node_modules/@react-three/fiber/dist/native.cjs
++++ b/node_modules/@react-three/fiber/dist/native.cjs
+@@ -10,7 +10,7 @@ var suspense = require('@react-three/drei/suspense');
+ var React = require('react');
+ var zustand = require('zustand');
+ var context = require('@react-three/drei/context');
+-var ReactDOM = require('react-dom');
++var ReactDOM = require('react-dom/client');
+ var client = require('react-dom/client');
+ var packageJson = require('react-dom/package.json');
+ var _reconciler = require('react-reconciler');
+diff --git a/node_modules/@react-three/fiber/dist/web.cjs b/node_modules/@react-three/fiber/dist/web.cjs
+index 548c772..26058d8 100644
+--- a/node_modules/@react-three/fiber/dist/web.cjs
++++ b/node_modules/@react-three/fiber/dist/web.cjs
+@@ -10,7 +10,7 @@ var suspense = require('@react-three/drei/suspense');
+ var React = require('react');
+ var zustand = require('zustand');
+ var context = require('@react-three/drei/context');
+-var ReactDOM = require('react-dom');
++var ReactDOM = require('react-dom/client');
+ var client = require('react-dom/client');
+ var packageJson = require('react-dom/package.json');
+ var _reconciler = require('react-reconciler');
+diff --git a/node_modules/@react-three/fiber/dist/core/renderer.cjs b/node_modules/@react-three/fiber/dist/core/renderer.cjs
+index 51307b2..32043e7 100644
+--- a/node_modules/@react-three/fiber/dist/core/renderer.cjs
++++ b/node_modules/@react-three/fiber/dist/core/renderer.cjs
+@@ -1,7 +1,7 @@
+ 'use strict';
+ 
+ var React = require('react');
+-var ReactDOM = require('react-dom');
++var ReactDOM = require('react-dom/client');
+ var _reconciler = require('react-reconciler');
+ var three = require('three');
+ var events = require('./events.cjs');
+diff --git a/node_modules/@react-three/fiber/dist/native/index.cjs b/node_modules/@react-three/fiber/dist/native/index.cjs
+index b9f658c..1b0a514 100644
+--- a/node_modules/@react-three/fiber/dist/native/index.cjs
++++ b/node_modules/@react-three/fiber/dist/native/index.cjs
+@@ -9,7 +9,6 @@
+ var React = require('react');
+ var zustand = require('zustand');
+ var context = require('@react-three/drei/context');
+-var ReactDOM = require('react-dom');
+ var client = require('react-dom/client');
+ var packageJson = require('react-dom/package.json');
+ var _reconciler = require('react-reconciler');
+diff --git a/node_modules/@react-three/fiber/dist/web/index.cjs b/node_modules/@react-three/fiber/dist/web/index.cjs
+index a1cc5fd..501867e 100644
+--- a/node_modules/@react-three/fiber/dist/web/index.cjs
++++ b/node_modules/@react-three/fiber/dist/web/index.cjs
+@@ -1,7 +1,7 @@
+ 'use strict';
+ 
+ var React = require('react');
+-var ReactDOM = require('react-dom');
++var ReactDOM = require('react-dom/client');
+ var _reconciler = require('react-reconciler');
+ var three = require('three');
+ var events = require('../core/events.cjs');
+diff --git a/node_modules/@react-three/fiber/dist/core/store.mjs b/node_modules/@react-three/fiber/dist/core/store.mjs
+index c844517..ddc6b45 100644
+--- a/node_modules/@react-three/fiber/dist/core/store.mjs
++++ b/node_modules/@react-three/fiber/dist/core/store.mjs
+@@ -1,5 +1,5 @@
+ import * as React from 'react';
+-import { unstable_createEventHandle } from 'react-dom';
++import { unstable_createEventHandle } from 'react-dom/client';
+ import { act, flushSync } from 'react-dom/client';
+ import { version } from 'react-dom/package.json';
+ import * as _reconciler from 'react-reconciler';
+diff --git a/node_modules/@react-three/fiber/dist/core/renderer.mjs b/node_modules/@react-three/fiber/dist/core/renderer.mjs
+index 99a5472..291e1d0 100644
+--- a/node_modules/@react-three/fiber/dist/core/renderer.mjs
++++ b/node_modules/@react-three/fiber/dist/core/renderer.mjs
+@@ -1,5 +1,5 @@
+ import * as React from 'react';
+-import { unstable_createEventHandle } from 'react-dom';
++import { unstable_createEventHandle } from 'react-dom/client';
+ import { act, flushSync } from 'react-dom/client';
+ import { version } from 'react-dom/package.json';
+ import * as _reconciler from 'react-reconciler';
+diff --git a/node_modules/@react-three/fiber/dist/core/utils.mjs b/node_modules/@react-three/fiber/dist/core/utils.mjs
+index 8e41103..429188e 100644
+--- a/node_modules/@react-three/fiber/dist/core/utils.mjs
++++ b/node_modules/@react-three/fiber/dist/core/utils.mjs
+@@ -1,5 +1,5 @@
+ import * as React from 'react';
+-import { unstable_createEventHandle } from 'react-dom';
++import { unstable_createEventHandle } from 'react-dom/client';
+ import { act, flushSync } from 'react-dom/client';
+ import { version } from 'react-dom/package.json';
+ import * as _reconciler from 'react-reconciler';
+diff --git a/node_modules/@react-three/fiber/dist/canvas.mjs b/node_modules/@react-three/fiber/dist/canvas.mjs
+index 38b2585..7756f14 100644
+--- a/node_modules/@react-three/fiber/dist/canvas.mjs
++++ b/node_modules/@react-three/fiber/dist/canvas.mjs
+@@ -1,5 +1,5 @@
+ import * as React from 'react';
+-import { unstable_createEventHandle } from 'react-dom';
++import { unstable_createEventHandle } from 'react-dom/client';
+ import { act, flushSync } from 'react-dom/client';
+ import { version } from 'react-dom/package.json';
+ import * as _reconciler from 'react-reconciler';
+diff --git a/node_modules/@react-three/fiber/dist/hooks.mjs b/node_modules/@react-three/fiber/dist/hooks.mjs
+index 0366838..c8cc238 100644
+--- a/node_modules/@react-three/fiber/dist/hooks.mjs
++++ b/node_modules/@react-three/fiber/dist/hooks.mjs
+@@ -1,5 +1,5 @@
+ import * as React from 'react';
+-import { unstable_createEventHandle } from 'react-dom';
++import { unstable_createEventHandle } from 'react-dom/client';
+ import { act, flushSync } from 'react-dom/client';
+ import { version } from 'react-dom/package.json';
+ import * as _reconciler from 'react-reconciler';
+diff --git a/node_modules/@react-three/fiber/dist/native.mjs b/node_modules/@react-three/fiber/dist/native.mjs
+index 38b2585..7756f14 100644
+--- a/node_modules/@react-three/fiber/dist/native.mjs
++++ b/node_modules/@react-three/fiber/dist/native.mjs
+@@ -1,5 +1,5 @@
+ import * as React from 'react';
+-import { unstable_createEventHandle } from 'react-dom';
++import { unstable_createEventHandle } from 'react-dom/client';
+ import { act, flushSync } from 'react-dom/client';
+ import { version } from 'react-dom/package.json';
+ import * as _reconciler from 'react-reconciler';
+diff --git a/node_modules/@react-three/fiber/dist/web.mjs b/node_modules/@react-three/fiber/dist/web.mjs
+index 38b2585..7756f14 100644
+--- a/node_modules/@react-three/fiber/dist/web.mjs
++++ b/node_modules/@react-three/fiber/dist/web.mjs
+@@ -1,5 +1,5 @@
+ import * as React from 'react';
+-import { unstable_createEventHandle } from 'react-dom';
++import { unstable_createEventHandle } from 'react-dom/client';
+ import { act, flushSync } from 'react-dom/client';
+ import { version } from 'react-dom/package.json';
+ import * as _reconciler from 'react-reconciler';
+diff --git a/node_modules/@react-three/fiber/dist/three-types.d.ts b/node_modules/@react-three/fiber/dist/three-types.d.ts
+index c6d8666..4acb1c7 100644
+--- a/node_modules/@react-three/fiber/dist/three-types.d.ts
++++ b/node_modules/@react-three/fiber/dist/three-types.d.ts
+@@ -1,4 +1,4 @@
+-import * as THREE from 'three';
++import * as THREE from 'three/src/Three.js';
+ import { EventHandlers } from './core/events';
+ import { Attach, Constructor, InstanceProps, Color, Vector2, Vector3, Vector4, Euler, Matrix4, Layers, Quaternion } from './core/utils';
+ import { ToneMapping } from 'three/src/constants.js';
+diff --git a/node_modules/@react-three/fiber/dist/core/store.d.ts b/node_modules/@react-three/fiber/dist/core/store.d.ts
+index bf62c8e..dd00488 100644
+--- a/node_modules/@react-three/fiber/dist/core/store.d.ts
++++ b/node_modules/@react-three/fiber/dist/core/store.d.ts
+@@ -1,5 +1,5 @@
+ import * as THREE from 'three';
+-import * as React from 'react';
++import React from 'react';
+ import { StoreApi, UseBoundStore } from 'zustand';
+ import { Dpr, Size, Viewport, Camera, EventManager, RenderCallback, Performance, PrivateKeys, Raycaster, Intersection } from './utils';
+ export interface RootState {
+diff --git a/node_modules/@react-three/fiber/dist/core/renderer.d.ts b/node_modules/@react-three/fiber/dist/core/renderer.d.ts
+index 01dfb00..9dfb899 100644
+--- a/node_modules/@react-three/fiber/dist/core/renderer.d.ts
++++ b/node_modules/@react-three/fiber/dist/core/renderer.d.ts
+@@ -1,11 +1,11 @@
+ import * as THREE from 'three';
+-import * as React from 'react';
++import React from 'react';
+ import { UseBoundStore } from 'zustand';
+ import { RootState } from './store';
+ declare function createRenderer(roots: Map<Element, UseBoundStore<RootState>>): import("react-reconciler").Reconciler<THREE.Object3D<THREE.Event>, any, Element, any, any>;
+-declare function render(element: React.ReactNode, container: Element, state: Partial<RootState>): UseBoundStore<RootState>;
++declare function render(element: React.ReactNode, container: Element, state?: Partial<RootState>): UseBoundStore<RootState>;
+ declare function unmountComponentAtNode(container: Element): void;
+-export { render, unmountComponentAtNode, createRenderer, };
++export { render, unmountComponentAtNode, createRenderer };
+ /**
+  * @deprecated Use `unmountComponentAtNode` instead.
+  */
+diff --git a/node_modules/@react-three/fiber/dist/index.d.ts b/node_modules/@react-three/fiber/dist/index.d.ts
+index d7a3891..de49c36 100644
+--- a/node_modules/@react-three/fiber/dist/index.d.ts
++++ b/node_modules/@react-three/fiber/dist/index.d.ts
+@@ -1,5 +1,5 @@
+ import 'zustand/vanilla';
+-import * as React from 'react';
++import React from 'react';
+ import * as THREE from 'three';
+ import { suspend } from 'suspend-react';
+ import { context, useIsomorphicLayoutEffect } from '@react-three/drei/context';
+diff --git a/node_modules/@react-three/fiber/dist/native/index.d.ts b/node_modules/@react-three/fiber/dist/native/index.d.ts
+index e565f41..59a9abf 100644
+--- a/node_modules/@react-three/fiber/dist/native/index.d.ts
++++ b/node_modules/@react-three/fiber/dist/native/index.d.ts
+@@ -1,5 +1,5 @@
+ import 'zustand/vanilla';
+-import * as React from 'react';
++import React from 'react';
+ import * as THREE from 'three';
+ import { suspend } from 'suspend-react';
+ import { context, useIsomorphicLayoutEffect } from '@react-three/drei/context';
+diff --git a/node_modules/@react-three/fiber/dist/web/index.d.ts b/node_modules/@react-three/fiber/dist/web/index.d.ts
+index d85b8aa..47c945b 100644
+--- a/node_modules/@react-three/fiber/dist/web/index.d.ts
++++ b/node_modules/@react-three/fiber/dist/web/index.d.ts
+@@ -1,4 +1,4 @@
+-import * as React from 'react';
++import React from 'react';
+ import * as THREE from 'three';
+ import { RootState } from '../core/store';
+ import { EventHandlers } from '../core/events';
+diff --git a/node_modules/@react-three/fiber/dist/core/utils.d.ts b/node_modules/@react-three/fiber/dist/core/utils.d.ts
+index f107d6a..88d5786 100644
+--- a/node_modules/@react-three/fiber/dist/core/utils.d.ts
++++ b/node_modules/@react-three/fiber/dist/core/utils.d.ts
+@@ -1,5 +1,5 @@
+ import * as THREE from 'three';
+-import * as React from 'react';
++import React from 'react';
+ import { UseBoundStore } from 'zustand';
+ import { RootState } from './store';
+ import { EquirectangularReflectionMapping, TextureEncoding, ToneMapping } from 'three/src/constants.js';
+diff --git a/node_modules/@react-three/fiber/dist/canvas.d.ts b/node_modules/@react-three/fiber/dist/canvas.d.ts
+index d85b8aa..47c945b 100644
+--- a/node_modules/@react-three/fiber/dist/canvas.d.ts
++++ b/node_modules/@react-three/fiber/dist/canvas.d.ts
+@@ -1,4 +1,4 @@
+-import * as React from 'react';
++import React from 'react';
+ import * as THREE from 'three';
+ import { RootState } from './core/store';
+ import { EventHandlers } from './core/events';
+diff --git a/node_modules/@react-three/fiber/dist/hooks.d.ts b/node_modules/@react-three/fiber/dist/hooks.d.ts
+index d85b8aa..47c945b 100644
+--- a/node_modules/@react-three/fiber/dist/hooks.d.ts
++++ b/node_modules/@react-three/fiber/dist/hooks.d.ts
+@@ -1,4 +1,4 @@
+-import * as React from 'react';
++import React from 'react';
+ import * as THREE from 'three';
+ import { RootState } from './core/store';
+ import { EventHandlers } from './core/events';
+diff --git a/node_modules/@react-three/fiber/dist/native.d.ts b/node_modules/@react-three/fiber/dist/native.d.ts
+index d85b8aa..47c945b 100644
+--- a/node_modules/@react-three/fiber/dist/native.d.ts
++++ b/node_modules/@react-three/fiber/dist/native.d.ts
+@@ -1,4 +1,4 @@
+-import * as React from 'react';
++import React from 'react';
+ import * as THREE from 'three';
+ import { RootState } from './core/store';
+ import { EventHandlers } from './core/events';
+diff --git a/node_modules/@react-three/fiber/dist/web.d.ts b/node_modules/@react-three/fiber/dist/web.d.ts
+index d85b8aa..47c945b 100644
+--- a/node_modules/@react-three/fiber/dist/web.d.ts
++++ b/node_modules/@react-three/fiber/dist/web.d.ts
+@@ -1,4 +1,4 @@
+-import * as React from 'react';
++import React from 'react';
+ import * as THREE from 'three';
+ import { RootState } from './core/store';
+ import { EventHandlers } from './core/events';
+diff --git a/node_modules/@react-three/fiber/dist/core/events.d.ts b/node_modules/@react-three/fiber/dist/core/events.d.ts
+index 73844f2..ec35b71 100644
+--- a/node_modules/@react-three/fiber/dist/core/events.d.ts
++++ b/node_modules/@react-three/fiber/dist/core/events.d.ts
+@@ -1,4 +1,4 @@
+-import * as React from 'react';
++import React from 'react';
+ import * as THREE from 'three';
+ import { RootState } from './store';
+ import { ThreeEvent } from './utils';
+diff --git a/node_modules/@react-three/fiber/dist/core/reconciler.mjs b/node_modules/@react-three/fiber/dist/core/reconciler.mjs
+index 99a5472..291e1d0 100644
+--- a/node_modules/@react-three/fiber/dist/core/reconciler.mjs
++++ b/node_modules/@react-three/fiber/dist/core/reconciler.mjs
+@@ -1,5 +1,5 @@
+ import * as React from 'react';
+-import { unstable_createEventHandle } from 'react-dom';
++import { unstable_createEventHandle } from 'react-dom/client';
+ import { act, flushSync } from 'react-dom/client';
+ import { version } from 'react-dom/package.json';
+ import * as _reconciler from 'react-reconciler';
+diff --git a/node_modules/@react-three/fiber/dist/core/reconciler.cjs b/node_modules/@react-three/fiber/dist/core/reconciler.cjs
+index 51307b2..32043e7 100644
+--- a/node_modules/@react-three/fiber/dist/core/reconciler.cjs
++++ b/node_modules/@react-three/fiber/dist/core/reconciler.cjs
+@@ -1,7 +1,7 @@
+ 'use strict';
+ 
+ var React = require('react');
+-var ReactDOM = require('react-dom');
++var ReactDOM = require('react-dom/client');
+ var _reconciler = require('react-reconciler');
+ var three = require('three');
+ var events = require('./events.cjs');
