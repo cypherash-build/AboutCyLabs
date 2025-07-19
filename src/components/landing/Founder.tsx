@@ -23,7 +23,7 @@ export default function Founder() {
           backgroundOpacity={0.05}
           blur={20}
         >
-          <div className="mx-auto max-w-2xl text-center">
+          <div className="mx-auto mb-12 max-w-2xl text-center">
             <h2 className="font-headline text-3xl font-semibold text-primary md:text-4xl">
               The Mind Behind The Mission
             </h2>
@@ -33,7 +33,7 @@ export default function Founder() {
             </p>
           </div>
 
-          <div className="mt-12 grid grid-cols-1 items-start gap-12 lg:grid-cols-5">
+          <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-5">
             <div className="lg:col-span-2">
               <Card className="overflow-hidden bg-card/50 shadow-lg">
                 <CardContent className="p-0">
@@ -72,13 +72,10 @@ export default function Founder() {
                   always been about solving what's next.
                 </p>
               </div>
-              <div className="mt-8 grid grid-cols-1 gap-4 text-left">
+              <div className="mt-8 space-y-4">
                 {journeyPoints.map((point, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center gap-3"
-                  >
-                    <CheckCircle className="h-5 w-5 flex-shrink-0 text-accent" />
+                  <div key={index} className="flex items-start gap-3">
+                    <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-accent" />
                     <div>
                       <p className="font-semibold text-primary">
                         {point.achievement}
