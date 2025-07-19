@@ -23,7 +23,7 @@ export default function Hero() {
       id="home"
       className="relative bg-transparent pt-24 pb-20 text-center md:pt-40 md:pb-32"
     >
-      <div className="container relative z-10 mx-auto px-4">
+      <div className="container relative z-10 mx-auto flex flex-col items-center px-4">
         <SplitText
           text={heroContent.headline}
           className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl lg:text-7xl"
@@ -31,11 +31,9 @@ export default function Hero() {
           delay={20}
           textAlign="center"
         />
-        <div className="mt-6 flex justify-center">
-            <p className="max-w-3xl text-lg text-muted-foreground md:text-xl">
-                {heroContent.subheadline}
-            </p>
-        </div>
+        <p className="mt-6 max-w-3xl text-lg text-muted-foreground md:text-xl">
+            {heroContent.subheadline}
+        </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button size="lg" asChild>
             <a href="#products">Explore Our Solutions</a>
