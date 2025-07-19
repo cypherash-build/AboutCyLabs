@@ -11,11 +11,10 @@ const Footer = () => {
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
           <div className="flex items-center gap-2">
             <Image
-              src="https://i.postimg.cc/tR2k3L80/logo.png"
+              src="https://i.postimg.cc/LXqdg5dx/Cypherash-Labs-2.png"
               alt="Cypherash Labs Logo"
               width={140}
               height={40}
-              className="h-auto"
             />
           </div>
           <p className="text-center text-sm text-primary-foreground/80">
