@@ -57,60 +57,62 @@ export default function Products() {
                 impactful deep tech solutions.
               </p>
             </div>
-            <motion.div
-              className="grid grid-cols-1 gap-8 md:grid-cols-2"
-              animate={selectedProduct ? "hidden" : "visible"}
-              variants={{
-                visible: { opacity: 1, display: 'grid' },
-                hidden: { opacity: 0, transitionEnd: { display: 'none' } },
-              }}
-            >
-              {products.map((product) => (
+            
+            <AnimatePresence>
+              {!selectedProduct && (
                 <motion.div
-                  key={product.id}
-                  layoutId={`product-card-${product.id}`}
-                  onClick={() =>
-                    !selectedProduct && handleSelectProduct(product.id as ProductId)
-                  }
-                  className={`flex flex-col overflow-hidden transition-all bg-card/50 rounded-lg ${
-                    audience === "investor"
-                      ? "cursor-pointer hover:shadow-lg hover:-translate-y-1"
-                      : ""
-                  }`}
-                  whileHover={audience === 'investor' && !selectedProduct ? { scale: 1.03 } : {}}
+                  className="grid grid-cols-1 gap-8 md:grid-cols-2"
+                  initial={{ opacity: 1 }}
+                  exit={{ opacity: 0, transition: { duration: 0.2 } }}
                 >
-                  <Card className="flex flex-col h-full bg-transparent border-0">
-                    <CardHeader>
-                      <div className="mb-4 flex items-center gap-4">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
-                          <product.icon className="h-6 w-6 text-accent" />
-                        </div>
-                        <CardTitle className="font-headline text-2xl font-bold text-primary">
-                          {product.name}
-                        </CardTitle>
-                      </div>
-                      <CardDescription className="text-base">
-                        {product.description[audience]}
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent className="flex flex-grow flex-col justify-end">
-                      <div>
-                        <h4 className="mb-2 text-sm font-semibold text-primary">
-                          Target Audience
-                        </h4>
-                        <div className="flex flex-wrap gap-2">
-                          {product.target.map((t, i) => (
-                            <Badge key={i} variant="secondary">
-                              {t}
-                            </Badge>
-                          ))}
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
+                  {products.map((product) => (
+                    <motion.div
+                      key={product.id}
+                      layoutId={`product-card-${product.id}`}
+                      onClick={() =>
+                        !selectedProduct && handleSelectProduct(product.id as ProductId)
+                      }
+                      className={`flex flex-col overflow-hidden transition-all bg-card/50 rounded-lg ${
+                        audience === "investor"
+                          ? "cursor-pointer hover:shadow-lg hover:-translate-y-1"
+                          : ""
+                      }`}
+                      whileHover={audience === 'investor' && !selectedProduct ? { scale: 1.03 } : {}}
+                    >
+                      <Card className="flex flex-col h-full bg-transparent border-0">
+                        <CardHeader>
+                          <div className="mb-4 flex items-center gap-4">
+                            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
+                              <product.icon className="h-6 w-6 text-accent" />
+                            </div>
+                            <CardTitle className="font-headline text-2xl font-bold text-primary">
+                              {product.name}
+                            </CardTitle>
+                          </div>
+                          <CardDescription className="text-base">
+                            {product.description[audience]}
+                          </CardDescription>
+                        </CardHeader>
+                        <CardContent className="flex flex-grow flex-col justify-end">
+                          <div>
+                            <h4 className="mb-2 text-sm font-semibold text-primary">
+                              Target Audience
+                            </h4>
+                            <div className="flex flex-wrap gap-2">
+                              {product.target.map((t, i) => (
+                                <Badge key={i} variant="secondary">
+                                  {t}
+                                </Badge>
+                              ))}
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </motion.div>
+                  ))}
                 </motion.div>
-              ))}
-            </motion.div>
+              )}
+            </AnimatePresence>
 
             <AnimatePresence>
               {selectedProduct && investorDetails && (
@@ -119,8 +121,8 @@ export default function Products() {
                   className="absolute inset-0 z-10 bg-card/80 backdrop-blur-lg rounded-lg overflow-hidden"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5 }}
+                  exit={{ opacity: 0, transition: { duration: 0.3, delay: 0.1 } }}
+                  transition={{ duration: 0.4 }}
                 >
                   <div className="p-6 sm:p-8 h-full flex flex-col">
                     <div className="flex justify-between items-start mb-4">
@@ -139,7 +141,12 @@ export default function Products() {
                       </Button>
                     </div>
 
-                    <div className="overflow-y-auto flex-grow pr-4">
+                    <motion.div 
+                        className="overflow-y-auto flex-grow pr-4"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0, transition: { delay: 0.3, duration: 0.4 } }}
+                        exit={{ opacity: 0, y: -10, transition: { duration: 0.2 } }}
+                    >
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="space-y-4">
                                 <div className="space-y-2">
@@ -162,7 +169,7 @@ export default function Products() {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                   </div>
                 </motion.div>
               )}
