@@ -95,7 +95,7 @@ export default function Products() {
                               {product.name}
                             </CardTitle>
                           </div>
-                          <CardDescription className="text-base">
+                          <CardDescription className="text-base text-muted-foreground">
                             {product.description[audience]}
                           </CardDescription>
                         </CardHeader>

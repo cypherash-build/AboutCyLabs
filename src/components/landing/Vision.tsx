@@ -59,7 +59,7 @@ export default function Vision() {
                         </div>
                     </AccordionContent>
                 </AccordionItem>
-                <AccordionItem value="item-2" className="border-b-secondary/50">
+                <AccordionItem value="item-2" className="border-b-0">
                     <AccordionTrigger className="text-left hover:no-underline">
                      <div className="flex w-full items-center gap-4">
                         <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10">

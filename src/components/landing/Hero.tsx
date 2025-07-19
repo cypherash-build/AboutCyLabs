@@ -23,7 +23,7 @@ export default function Hero() {
       className="relative bg-transparent pt-24 pb-20 text-center md:pt-40 md:pb-32"
     >
       <div className="container relative z-10 mx-auto px-4">
-        <div className="min-h-[12rem] sm:min-h-[14rem] md:min-h-[18rem] lg:min-h-[20rem] flex items-center justify-center">
+        <div className="flex min-h-[12rem] items-center justify-center sm:min-h-[14rem] md:min-h-[18rem] lg:min-h-[20rem]">
              <TextPressure
                 text={heroContent.headline}
                 minFontSize={36}
