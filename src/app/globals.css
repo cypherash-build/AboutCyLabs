@@ -67,20 +67,30 @@
 }
 
 @layer utilities {
-  .animated-grid-background {
-    @apply relative flex h-[50rem] w-full items-center justify-center overflow-hidden rounded-md bg-background;
-    background-image:
-      linear-gradient(to right, hsl(var(--border)) 1px, transparent 1px),
-      linear-gradient(to bottom, hsl(var(--border)) 1px, transparent 1px);
-    background-size: 80px 80px;
-    animation: move-grid 20s linear infinite;
+  .hyperspeed-background {
+    @apply relative w-full overflow-hidden bg-background;
   }
 
-  .animated-grid-background::before {
-    content: '';
-    @apply absolute inset-0 z-0 h-full w-full;
-    background-image: radial-gradient(circle, transparent, hsl(var(--background)));
-    background-size: 300% 300%;
-    animation: move-gradient 15s ease-in-out infinite;
+  .stars-container {
+    @apply absolute inset-0 z-0;
+    perspective: 800px;
+  }
+  
+  .star {
+    @apply absolute top-1/2 left-1/2 w-1 h-20 rounded-full bg-accent/50;
+    transform-origin: 0 0;
+    animation: move-star var(--star-speed) linear infinite;
+    animation-delay: var(--star-delay);
+  }
+
+  @keyframes move-star {
+    from {
+      transform: rotate(var(--star-angle)) translateX(0) translateZ(-100px);
+      opacity: 1;
+    }
+    to {
+      transform: rotate(var(--star-angle)) translateX(100vw) translateZ(800px);
+      opacity: 0;
+    }
   }
 }
