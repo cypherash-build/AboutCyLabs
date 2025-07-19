@@ -61,10 +61,9 @@ export default function Products() {
               className="grid grid-cols-1 gap-8 md:grid-cols-2"
               animate={selectedProduct ? "hidden" : "visible"}
               variants={{
-                visible: { opacity: 1 },
-                hidden: { opacity: 0.5 },
+                visible: { opacity: 1, display: 'grid' },
+                hidden: { opacity: 0, transitionEnd: { display: 'none' } },
               }}
-              transition={{ duration: 0.5 }}
             >
               {products.map((product) => (
                 <motion.div
