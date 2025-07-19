@@ -41,7 +41,7 @@ export default function Header() {
           <div className="flex h-16 w-full items-center justify-between px-6">
             <Link href="#" className="flex items-center gap-2">
               <Image
-                src="https://i.postimg.cc/sXP6Cxn1/image.png"
+                src="https://i.postimg.cc/tR2k3L80/logo.png"
                 alt="Cypherash Labs Logo"
                 width={140}
                 height={40}
