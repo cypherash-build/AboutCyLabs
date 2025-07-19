@@ -26,6 +26,7 @@ const RippleGrid = ({
     camera.position.z = 15;
 
     function resize() {
+      if (!containerRef.current) return;
       renderer.setSize(containerRef.current.offsetWidth, containerRef.current.offsetHeight);
       camera.perspective({ aspect: gl.canvas.width / gl.canvas.height });
     }
@@ -144,16 +145,28 @@ const RippleGrid = ({
     
     animationFrameId = requestAnimationFrame(update);
 
+    const currentContainer = containerRef.current;
+
     return () => {
       cancelAnimationFrame(animationFrameId);
       window.removeEventListener('resize', resize);
-      if (containerRef.current) {
-        containerRef.current.removeChild(gl.canvas);
+      if (mouseInteraction && 'ontouchstart' in window) {
+        window.removeEventListener('touchstart', updateMouse);
+        window.removeEventListener('touchmove', updateMouse);
+      } else if (mouseInteraction) {
+        window.removeEventListener('mousemove', updateMouse);
+      }
+      if (currentContainer && gl.canvas) {
+        try {
+          currentContainer.removeChild(gl.canvas);
+        } catch (e) {
+          // Ignore error if canvas is already removed
+        }
       }
     };
   }, [gridColor, rippleIntensity, gridSize, gridThickness, mouseInteraction, mouseInteractionRadius, opacity]);
 
-  return <div ref={containerRef} style={{ width: '100%', height: '100%' }} />;
+  return <div ref={containerRef} style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, zIndex: -1 }} />;
 };
 
 export default RippleGrid;
