@@ -35,7 +35,7 @@ export default function Vision() {
             <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:items-start">
                 <div className="relative aspect-video w-full overflow-hidden rounded-lg shadow-xl">
                      <Image
-                        src="https://placehold.co/600x400.png"
+                        src="https://i.ibb.co/Ldvg9Gr4/Gemini-Generated-Image-orkxtdorkxtdorkx.png"
                         alt="Abstract representation of future technology"
                         fill
                         className="object-cover"
