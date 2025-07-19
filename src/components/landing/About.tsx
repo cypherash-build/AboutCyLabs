@@ -25,13 +25,13 @@ export default function About() {
                 <Lightbulb className="h-8 w-8 text-accent" />
               </div>
             </div>
-            <ScrambledText>
-              <h2
-                  className="font-headline text-3xl font-semibold text-primary md:text-4xl"
-              >
-                Our Core Mission
-              </h2>
-            </ScrambledText>
+            <div className="flex justify-center">
+              <ScrambledText>
+                <h2 className="font-headline text-3xl font-semibold text-primary md:text-4xl">
+                  Our Core Mission
+                </h2>
+              </ScrambledText>
+            </div>
             <p className="mt-4 text-lg text-muted-foreground md:text-xl">
               {aboutContent.mission}
             </p>

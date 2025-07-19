@@ -21,15 +21,16 @@ export default function Impact() {
         >
           <div className="w-full">
             <div className="mx-auto mb-12 max-w-2xl text-center">
-              <ScrambledText>
-                <h2
-                    className="font-headline text-3xl font-semibold text-primary md:text-4xl"
-                >
-                  Measurable & Meaningful Impact
-                </h2>
-              </ScrambledText>
+              <div className="flex justify-center">
+                <ScrambledText>
+                  <h2 className="font-headline text-3xl font-semibold text-primary md:text-4xl">
+                    Measurable & Meaningful Impact
+                  </h2>
+                </ScrambledText>
+              </div>
               <p className="mt-4 text-lg text-muted-foreground">
-                We are committed to delivering solutions that create tangible, positive change across society and industries.
+                We are committed to delivering solutions that create tangible,
+                positive change across society and industries.
               </p>
             </div>
 
@@ -41,11 +42,13 @@ export default function Impact() {
                       {item.title}
                     </CardTitle>
                     <div className="rounded-md bg-accent/10 p-2">
-                        <item.icon className="h-5 w-5 text-accent" />
+                      <item.icon className="h-5 w-5 text-accent" />
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <div className="text-2xl font-bold text-primary">{item.metric}</div>
+                    <div className="text-2xl font-bold text-primary">
+                      {item.metric}
+                    </div>
                     <p className="text-xs text-muted-foreground">
                       {item.description}
                     </p>

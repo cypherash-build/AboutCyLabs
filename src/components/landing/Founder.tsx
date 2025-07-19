@@ -25,18 +25,20 @@ export default function Founder() {
           backgroundOpacity={0.05}
           blur={20}
         >
-          <div className="w-full">
-            <ScrambledText>
-              <h2 className="text-center font-headline text-3xl font-semibold text-primary md:text-4xl">
-                The Mind Behind The Mission
-              </h2>
-            </ScrambledText>
-            <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-muted-foreground">
+          <div className="w-full text-center">
+            <div className="flex justify-center">
+              <ScrambledText>
+                <h2 className="font-headline text-3xl font-semibold text-primary md:text-4xl">
+                  The Mind Behind The Mission
+                </h2>
+              </ScrambledText>
+            </div>
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
               Our innovation is driven by a unique blend of foresight and
               full-stack engineering, embodied by our founder.
             </p>
 
-            <div className="mt-12 grid grid-cols-1 items-start gap-12 lg:grid-cols-5">
+            <div className="mt-12 grid grid-cols-1 items-start gap-12 text-left lg:grid-cols-5">
               <div className="lg:col-span-2">
                 <Card className="overflow-hidden bg-card/50 shadow-lg">
                   <CardContent className="p-0">

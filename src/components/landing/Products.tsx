@@ -50,11 +50,13 @@ export default function Products() {
           blur={20}
         >
           <div className="mx-auto mb-12 max-w-2xl text-center">
-            <ScrambledText>
-              <h2 className="font-headline text-3xl font-semibold text-primary md:text-4xl">
-                Our Portfolio of Solutions
-              </h2>
-            </ScrambledText>
+            <div className="flex justify-center">
+              <ScrambledText>
+                <h2 className="font-headline text-3xl font-semibold text-primary md:text-4xl">
+                  Our Portfolio of Solutions
+                </h2>
+              </ScrambledText>
+            </div>
             <p className="mt-4 text-lg text-muted-foreground">
               We identify technological vacuums and fill them with permanent,
               impactful deep tech solutions.
@@ -97,17 +99,17 @@ export default function Products() {
                               {product.name}
                             </CardTitle>
                           </div>
-                          <CardDescription className="text-base flex-grow">
+                          <CardDescription className="text-base">
                             {product.id === "cypherkey" ? (
                               <ScrambledText>
                                 <p>{product.description[audience]}</p>
                               </ScrambledText>
                             ) : (
-                              product.description[audience]
+                              <p>{product.description[audience]}</p>
                             )}
                           </CardDescription>
                         </CardHeader>
-                        <CardContent className="flex h-full flex-col justify-end pt-4">
+                        <CardContent className="flex flex-grow flex-col justify-end pt-4">
                           <div>
                             <h4 className="mb-2 text-sm font-semibold text-primary">
                               Target Audience
