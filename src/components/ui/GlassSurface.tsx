@@ -1,7 +1,7 @@
 // @ts-nocheck
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./GlassSurface.css";
 
 const GlassSurface = ({
@@ -32,6 +32,25 @@ const GlassSurface = ({
   const greenChannelRef = useRef(null);
   const blueChannelRef = useRef(null);
   const gaussianBlurRef = useRef(null);
+  const [useFallback, setUseFallback] = useState(true);
+
+  useEffect(() => {
+    const supportsSVGFilters = () => {
+      const isWebkit =
+        /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
+      const isFirefox = /Firefox/.test(navigator.userAgent);
+
+      if (isWebkit || isFirefox) {
+        return false;
+      }
+
+      const div = document.createElement("div");
+      div.style.backdropFilter = "url(#test)";
+      return div.style.backdropFilter !== "";
+    };
+    setUseFallback(!supportsSVGFilters());
+  }, []);
+
 
   const generateDisplacementMap = () => {
     const rect = containerRef.current?.getBoundingClientRect();
@@ -126,22 +145,6 @@ const GlassSurface = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [width, height]);
 
-  const supportsSVGFilters = () => {
-    if (typeof window === 'undefined') return false;
-
-    const isWebkit =
-      /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
-    const isFirefox = /Firefox/.test(navigator.userAgent);
-
-    if (isWebkit || isFirefox) {
-      return false;
-    }
-
-    const div = document.createElement("div");
-    div.style.backdropFilter = "url(#test)";
-    return div.style.backdropFilter !== "";
-  };
-
   const containerStyle = {
     ...style,
     width: typeof width === "number" ? `${width}px` : width,
@@ -154,7 +157,7 @@ const GlassSurface = ({
   return (
     <div
       ref={containerRef}
-      className={`glass-surface ${supportsSVGFilters() ? "glass-surface--svg" : "glass-surface--fallback"} ${className}`}
+      className={`glass-surface ${useFallback ? "glass-surface--fallback" : "glass-surface--svg"} ${className}`}
       style={containerStyle}
     >
       <svg className="glass-surface__filter" xmlns="http://www.w3.org/2000/svg">
