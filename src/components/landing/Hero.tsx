@@ -19,41 +19,40 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden bg-card pt-24 pb-20 text-center md:pt-40 md:pb-32"
+      className="relative overflow-hidden bg-background pt-24 pb-20 text-center md:pt-40 md:pb-32"
     >
-      <div className="container relative z-10 mx-auto px-4">
-        <h1 className="font-headline text-4xl font-bold tracking-tight text-primary sm:text-5xl md:text-6xl lg:text-7xl">
-          {heroContent.headline}
-        </h1>
-        <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground md:text-xl">
-          {heroContent.subheadline}
-        </p>
-        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button size="lg" asChild>
-            <a href="#products">Explore Our Solutions</a>
-          </Button>
-          <div className="flex items-center gap-2">
-            <Users className="h-5 w-5 text-muted-foreground" />
-            <Select
-              onValueChange={(value: Audience) => setAudience(value)}
-              defaultValue="default"
-            >
-              <SelectTrigger className="w-[200px] bg-background shadow-sm">
-                <SelectValue placeholder="I am a..." />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="default">General Visitor</SelectItem>
-                <SelectItem value="government">Government Official</SelectItem>
-                <SelectItem value="investor">Investor</SelectItem>
-                <SelectItem value="technologist">Technologist</SelectItem>
-              </SelectContent>
-            </Select>
+      <div className="animated-grid-background">
+        <div className="container relative z-10 mx-auto px-4">
+          <h1 className="font-headline text-4xl font-bold tracking-tight text-primary sm:text-5xl md:text-6xl lg:text-7xl">
+            {heroContent.headline}
+          </h1>
+          <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground md:text-xl">
+            {heroContent.subheadline}
+          </p>
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Button size="lg" asChild>
+              <a href="#products">Explore Our Solutions</a>
+            </Button>
+            <div className="flex items-center gap-2">
+              <Users className="h-5 w-5 text-muted-foreground" />
+              <Select
+                onValueChange={(value: Audience) => setAudience(value)}
+                defaultValue="default"
+              >
+                <SelectTrigger className="w-[200px] bg-card shadow-sm">
+                  <SelectValue placeholder="I am a..." />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="default">General Visitor</SelectItem>
+                  <SelectItem value="government">Government Official</SelectItem>
+                  <SelectItem value="investor">Investor</SelectItem>
+                  <SelectItem value="technologist">Technologist</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
           </div>
         </div>
       </div>
-       <div className="absolute inset-0 -z-0 h-full w-full bg-background [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-       <div className="absolute top-0 left-1/4 h-32 w-32 animate-pulse rounded-full bg-accent/10 blur-3xl"></div>
-       <div className="absolute bottom-0 right-1/4 h-32 w-32 animate-pulse rounded-full bg-primary/10 blur-3xl"></div>
     </section>
   );
 }
