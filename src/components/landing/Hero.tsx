@@ -11,6 +11,7 @@ import {
 import { useAudience, Audience } from "./AudienceContext";
 import { content } from "@/lib/content";
 import { Users } from "lucide-react";
+import TextPressure from "../ui/TextPressure";
 
 export default function Hero() {
   const { audience, setAudience } = useAudience();
@@ -22,9 +23,10 @@ export default function Hero() {
       className="relative bg-transparent pt-24 pb-20 text-center md:pt-40 md:pb-32"
     >
       <div className="container relative z-10 mx-auto px-4">
-        <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl lg:text-7xl">
-          {heroContent.headline}
-        </h1>
+        <TextPressure
+          text={heroContent.headline}
+          className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl lg:text-7xl"
+        />
         <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground md:text-xl">
           {heroContent.subheadline}
         </p>
