@@ -18,12 +18,12 @@ export default function Founder() {
     <section id="founder">
       <div className="container mx-auto px-4">
         <GlassSurface
-          className="p-8 md:p-12"
+          className="p-6 sm:p-8 md:p-12"
           backgroundOpacity={0.05}
           blur={20}
         >
           <div className="w-full">
-            <div className="text-center">
+            <div className="text-center mb-12">
                 <h2 className="font-headline text-3xl font-semibold text-primary md:text-4xl">
                     The Mind Behind The Mission
                 </h2>
@@ -32,11 +32,11 @@ export default function Founder() {
                 </p>
             </div>
 
-            <div className="mt-16 grid grid-cols-1 items-center gap-12 lg:grid-cols-5">
+            <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-5">
                 <div className="lg:col-span-2">
                     <Card className="overflow-hidden shadow-lg bg-card/50">
                         <CardContent className="p-0">
-                            <div className="relative aspect-square">
+                            <div className="relative aspect-[4/5] sm:aspect-square">
                                  <Image
                                     src="https://placehold.co/600x600.png"
                                     alt="Yash Pratap Singh, Founder & CEO of Cypherash Labs"

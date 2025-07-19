@@ -16,12 +16,12 @@ export default function Vision() {
     <section id="vision">
       <div className="container mx-auto px-4">
         <GlassSurface
-          className="p-8 md:p-12"
+          className="p-6 sm:p-8 md:p-12"
           backgroundOpacity={0.05}
           blur={20}
         >
           <div className="w-full">
-            <div className="mx-auto mb-16 max-w-2xl text-center">
+            <div className="mx-auto mb-12 max-w-2xl text-center">
               <h2 className="font-headline text-3xl font-semibold text-primary md:text-4xl">
                 Pioneering The Next Frontier
               </h2>

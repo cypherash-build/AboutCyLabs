@@ -13,7 +13,7 @@ export default function About() {
     <section id="about">
       <div className="container mx-auto px-4">
         <GlassSurface
-          className="p-8 md:p-12"
+          className="p-6 sm:p-8 md:p-12"
           backgroundOpacity={0.05}
           blur={20}
         >
