@@ -29,10 +29,13 @@ export default function Hero() {
           className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl lg:text-7xl"
           splitType="chars"
           delay={20}
+          textAlign="center"
         />
-        <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground md:text-xl">
-          {heroContent.subheadline}
-        </p>
+        <div className="mt-6 flex justify-center">
+            <p className="max-w-3xl text-lg text-muted-foreground md:text-xl">
+                {heroContent.subheadline}
+            </p>
+        </div>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button size="lg" asChild>
             <a href="#products">Explore Our Solutions</a>
