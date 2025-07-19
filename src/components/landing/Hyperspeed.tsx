@@ -369,6 +369,10 @@ const HyperspeedInternal = ({ effectOptions = {
         onMouseDown: (ev: any) => void;
         onMouseUp: (ev: any) => void;
         onWindowResize: () => void;
+        update: (delta: number) => void;
+        render: (delta: number) => void;
+        loadAssets: () => Promise<void>;
+        initPasses: () => void;
 
       constructor(container: HTMLElement, options: any = {}) {
         this.options = options;
@@ -436,6 +440,9 @@ const HyperspeedInternal = ({ effectOptions = {
         this.speedUpTarget = 0;
         this.speedUp = 0;
         this.timeOffset = 0;
+        
+        this.renderPass = new RenderPass(this.scene, this.camera);
+        this.bloomPass = new EffectPass(this.camera);
 
         this.tick = () => {
           if (this.disposed || !this) return;
@@ -495,105 +502,102 @@ const HyperspeedInternal = ({ effectOptions = {
           this.camera.updateProjectionMatrix();
           this.composer.setSize(width, height);
         };
+        this.update = (delta: number) => {
+            let lerpPercentage = Math.exp(-(-60 * Math.log2(1 - 0.1)) * delta);
+            this.speedUp += lerp(
+              this.speedUp,
+              this.speedUpTarget,
+              lerpPercentage,
+              0.00001
+            );
+            this.timeOffset += this.speedUp * delta;
+    
+            let time = this.clock.elapsedTime + this.timeOffset;
+    
+            this.rightCarLights.update(time);
+            this.leftCarLights.update(time);
+            this.leftSticks.update(time);
+            this.road.update(time);
+    
+            let updateCamera = false;
+            let fovChange = lerp(this.camera.fov, this.fovTarget, lerpPercentage);
+            if (fovChange !== 0) {
+              this.camera.fov += fovChange * delta * 6;
+              updateCamera = true;
+            }
+    
+            if (this.options.distortion.getJS) {
+              const distortion = this.options.distortion.getJS(0.025, time);
+    
+              this.camera.lookAt(
+                new THREE.Vector3(
+                  this.camera.position.x + distortion.x,
+                  this.camera.position.y + distortion.y,
+                  this.camera.position.z + distortion.z
+                )
+              );
+              updateCamera = true;
+            }
+            if (updateCamera) {
+              this.camera.updateProjectionMatrix();
+            }
+    
+            if (this.options.isHyper) {
+              console.log(this.options.isHyper);
+            }
+        };
+        this.render = (delta: number) => {
+            this.composer.render(delta);
+        };
+        this.loadAssets = () => {
+            const assets = this.assets;
+            return new Promise((resolve) => {
+              const manager = new THREE.LoadingManager(resolve as () => void);
+    
+              const searchImage = new Image();
+              const areaImage = new Image();
+              assets.smaa = {};
+              searchImage.addEventListener("load", function () {
+                assets.smaa.search = this;
+                manager.itemEnd("smaa-search");
+              });
+    
+              areaImage.addEventListener("load", function () {
+                assets.smaa.area = this;
+                manager.itemEnd("smaa-area");
+              });
+              manager.itemStart("smaa-search");
+              manager.itemStart("smaa-area");
+    
+              searchImage.src = SMAAEffect.searchImageDataURL;
+              areaImage.src = SMAAEffect.areaImageDataURL;
+            });
+        };
+        this.initPasses = () => {
+            this.renderPass = new RenderPass(this.scene, this.camera);
+            this.bloomPass = new EffectPass(
+              this.camera,
+              new BloomEffect({
+                luminanceThreshold: 0.2,
+                luminanceSmoothing: 0,
+                resolutionScale: 1
+              })
+            );
+    
+            const smaaPass = new EffectPass(
+              this.camera,
+              new SMAAEffect(this.assets.smaa.search, this.assets.smaa.area, SMAAPreset.MEDIUM)
+            );
+            this.renderPass.renderToScreen = false;
+            this.bloomPass.renderToScreen = false;
+            smaaPass.renderToScreen = true;
+            this.composer.addPass(this.renderPass);
+            this.composer.addPass(this.bloomPass);
+            this.composer.addPass(smaaPass);
+        };
+
 
         window.addEventListener("resize", this.onWindowResize.bind(this));
-      }
-
-      initPasses() {
-        this.renderPass = new RenderPass(this.scene, this.camera);
-        this.bloomPass = new EffectPass(
-          this.camera,
-          new BloomEffect({
-            luminanceThreshold: 0.2,
-            luminanceSmoothing: 0,
-            resolutionScale: 1
-          })
-        );
-
-        const smaaPass = new EffectPass(
-          this.camera,
-          new SMAAEffect(this.assets.smaa.search, this.assets.smaa.area, SMAAPreset.MEDIUM)
-        );
-        this.renderPass.renderToScreen = false;
-        this.bloomPass.renderToScreen = false;
-        smaaPass.renderToScreen = true;
-        this.composer.addPass(this.renderPass);
-        this.composer.addPass(this.bloomPass);
-        this.composer.addPass(smaaPass);
-      }
-
-      loadAssets() {
-        const assets = this.assets;
-        return new Promise((resolve) => {
-          const manager = new THREE.LoadingManager(resolve);
-
-          const searchImage = new Image();
-          const areaImage = new Image();
-          assets.smaa = {};
-          searchImage.addEventListener("load", function () {
-            assets.smaa.search = this;
-            manager.itemEnd("smaa-search");
-          });
-
-          areaImage.addEventListener("load", function () {
-            assets.smaa.area = this;
-            manager.itemEnd("smaa-area");
-          });
-          manager.itemStart("smaa-search");
-          manager.itemStart("smaa-area");
-
-          searchImage.src = SMAAEffect.searchImageDataURL;
-          areaImage.src = SMAAEffect.areaImageDataURL;
-        });
-      }
-
-      update(delta: number) {
-        let lerpPercentage = Math.exp(-(-60 * Math.log2(1 - 0.1)) * delta);
-        this.speedUp += lerp(
-          this.speedUp,
-          this.speedUpTarget,
-          lerpPercentage,
-          0.00001
-        );
-        this.timeOffset += this.speedUp * delta;
-
-        let time = this.clock.elapsedTime + this.timeOffset;
-
-        this.rightCarLights.update(time);
-        this.leftCarLights.update(time);
-        this.leftSticks.update(time);
-        this.road.update(time);
-
-        let updateCamera = false;
-        let fovChange = lerp(this.camera.fov, this.fovTarget, lerpPercentage);
-        if (fovChange !== 0) {
-          this.camera.fov += fovChange * delta * 6;
-          updateCamera = true;
-        }
-
-        if (this.options.distortion.getJS) {
-          const distortion = this.options.distortion.getJS(0.025, time);
-
-          this.camera.lookAt(
-            new THREE.Vector3(
-              this.camera.position.x + distortion.x,
-              this.camera.position.y + distortion.y,
-              this.camera.position.z + distortion.z
-            )
-          );
-          updateCamera = true;
-        }
-        if (updateCamera) {
-          this.camera.updateProjectionMatrix();
-        }
-
-        if (this.options.isHyper) {
-          console.log(this.options.isHyper);
-        }
-      }
-
-      render(delta: number) {
-        this.composer.render(delta);
       }
 
       dispose() {
@@ -1176,3 +1180,5 @@ const HyperspeedInternal = ({ effectOptions = {
 
 const Hyperspeed = memo(HyperspeedInternal);
 export default Hyperspeed;
+
+    
