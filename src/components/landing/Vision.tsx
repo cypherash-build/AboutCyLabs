@@ -8,8 +8,6 @@ import { BrainCircuit, Cpu } from "lucide-react";
 import Image from "next/image";
 import { content } from "@/lib/content";
 import GlassSurface from "../ui/GlassSurface";
-import ScrambledText from "../ui/ScrambledText";
-import "../ui/ScrambledText.css";
 
 export default function Vision() {
   const { sunshot, moonshot } = content.vision;
@@ -24,13 +22,9 @@ export default function Vision() {
         >
           <div className="w-full">
             <div className="mx-auto mb-12 max-w-2xl text-center">
-              <ScrambledText>
-                <h2
-                    className="font-headline text-3xl font-semibold text-primary md:text-4xl"
-                >
-                  Pioneering The Next Frontier
-                </h2>
-              </ScrambledText>
+              <h2 className="font-headline text-3xl font-semibold text-primary md:text-4xl">
+                Pioneering The Next Frontier
+              </h2>
               <p className="mt-4 text-lg text-muted-foreground">
                 Our long-term vision extends beyond current problems. We are building the foundational technologies for tomorrow's world.
               </p>

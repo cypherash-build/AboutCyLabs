@@ -2,8 +2,6 @@ import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import GlassSurface from "../ui/GlassSurface";
 import { CheckCircle } from "lucide-react";
-import ScrambledText from "../ui/ScrambledText";
-import "../ui/ScrambledText.css";
 
 export default function Founder() {
   const journeyPoints = [
@@ -26,13 +24,9 @@ export default function Founder() {
           blur={20}
         >
           <div className="w-full text-center">
-            <div className="flex justify-center">
-              <ScrambledText>
-                <h2 className="font-headline text-3xl font-semibold text-primary md:text-4xl">
-                  The Mind Behind The Mission
-                </h2>
-              </ScrambledText>
-            </div>
+            <h2 className="font-headline text-3xl font-semibold text-primary md:text-4xl">
+              The Mind Behind The Mission
+            </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
               Our innovation is driven by a unique blend of foresight and
               full-stack engineering, embodied by our founder.
@@ -68,11 +62,9 @@ export default function Founder() {
                 </Card>
               </div>
               <div className="lg:col-span-3">
-                <ScrambledText>
-                  <h4 className="font-headline text-2xl font-semibold text-primary">
-                    A Journey of Innovation
-                  </h4>
-                </ScrambledText>
+                <h4 className="font-headline text-2xl font-semibold text-primary">
+                  A Journey of Innovation
+                </h4>
                 <p className="mt-2 text-muted-foreground">
                   From childhood projects to deep tech leadership, the path has
                   always been about solving what's next.
