@@ -46,29 +46,18 @@
 
 @layer utilities {
   .hyperspeed-background {
-    @apply relative w-full overflow-hidden bg-background;
+    @apply absolute inset-0 w-full h-full overflow-hidden z-0;
   }
+}
 
-  .stars-container {
-    @apply absolute inset-0 z-0;
-    perspective: 800px;
-  }
-  
-  .star {
-    @apply absolute top-1/2 left-1/2 w-1 h-20 rounded-full bg-accent/50;
-    transform-origin: 0 0;
-    animation: move-star var(--star-speed) linear infinite;
-    animation-delay: var(--star-delay);
-  }
+#lights {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+}
 
-  @keyframes move-star {
-    from {
-      transform: rotate(var(--star-angle)) translateX(0) translateZ(-100px);
-      opacity: 1;
-    }
-    to {
-      transform: rotate(var(--star-angle)) translateX(100vw) translateZ(800px);
-      opacity: 0;
-    }
-  }
+canvas {
+  width: 100%;
+  height: 100%;
 }
