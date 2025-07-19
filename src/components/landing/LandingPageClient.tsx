@@ -1,5 +1,4 @@
 "use client";
-import { useMemo } from 'react';
 import { AudienceProvider } from '@/components/landing/AudienceContext';
 import Header from '@/components/landing/Header';
 import Hero from '@/components/landing/Hero';
