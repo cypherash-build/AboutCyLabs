@@ -36,7 +36,7 @@ export default function Header() {
           blur={isScrolled ? 20 : 0}
           borderWidth={isScrolled ? 0.07 : 0}
         >
-          <div className="flex h-16 items-center justify-between">
+          <div className="flex h-16 w-full items-center justify-between">
             <Link href="#" className="flex items-center gap-2">
               <Waves className="h-7 w-7 text-accent" />
               <span className="font-headline text-2xl font-bold text-primary">
