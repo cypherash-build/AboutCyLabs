@@ -37,7 +37,7 @@ const SplitText: React.FC<SplitTextProps> = ({
   textAlign = "center",
   onLetterAnimationComplete,
 }) => {
-  const ref = useRef<HTMLParagraphElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const animationCompletedRef = useRef(false);
   const scrollTriggerRef = useRef<ScrollTrigger | null>(null);
 
@@ -72,6 +72,7 @@ const SplitText: React.FC<SplitTextProps> = ({
         targets = splitter.words;
         break;
       case "chars":
+      case "words, chars":
         targets = splitter.chars;
         break;
       default:
