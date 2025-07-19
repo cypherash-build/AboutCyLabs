@@ -76,9 +76,9 @@ export default function Founder() {
                 {journeyPoints.map((point, index) => (
                   <div
                     key={index}
-                    className="flex items-start gap-3"
+                    className="flex items-center gap-3"
                   >
-                    <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-accent" />
+                    <CheckCircle className="h-5 w-5 flex-shrink-0 text-accent" />
                     <div>
                       <p className="font-semibold text-primary">
                         {point.achievement}

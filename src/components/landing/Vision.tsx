@@ -34,7 +34,7 @@ export default function Vision() {
                 <Accordion type="single" collapsible defaultValue="item-1" className="w-full">
                 <AccordionItem value="item-1" className="border-b-secondary/50">
                     <AccordionTrigger className="text-left hover:no-underline">
-                    <div className="flex items-center gap-4">
+                    <div className="flex w-full items-center gap-4">
                         <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10">
                             <BrainCircuit className="h-6 w-6 text-primary" />
                         </div>
@@ -61,7 +61,7 @@ export default function Vision() {
                 </AccordionItem>
                 <AccordionItem value="item-2" className="border-b-secondary/50">
                     <AccordionTrigger className="text-left hover:no-underline">
-                     <div className="flex items-center gap-4">
+                     <div className="flex w-full items-center gap-4">
                         <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10">
                             <Cpu className="h-6 w-6 text-primary" />
                         </div>
