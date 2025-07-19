@@ -90,20 +90,20 @@ export default function Products() {
                       <Card className="flex h-full flex-col border-0 bg-transparent">
                         <CardHeader>
                           <div className="mb-4 flex items-center gap-4">
-                            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
+                            <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-accent/10">
                               <product.icon className="h-6 w-6 text-accent" />
                             </div>
                             <CardTitle className="font-headline text-2xl font-bold text-primary">
                               {product.name}
                             </CardTitle>
                           </div>
-                          <CardDescription className="text-base min-h-[120px]">
-                            {product.id === "cypherkey" && audience !== 'investor' ? (
+                          <CardDescription className="text-base">
+                            {product.id === "cypherkey" ? (
                               <ScrambledText>
-                                <p>{product.description[audience]}</p>
+                                {product.description[audience]}
                               </ScrambledText>
                             ) : (
-                              <p>{product.description[audience]}</p>
+                              product.description[audience]
                             )}
                           </CardDescription>
                         </CardHeader>
@@ -149,7 +149,7 @@ export default function Products() {
                   <div className="flex h-full flex-col">
                     <div className="flex items-start justify-between border-b border-border/50 p-6 sm:p-8">
                       <div className="flex items-center gap-4">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
+                        <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-accent/10">
                           <investorDetails.icon className="h-6 w-6 text-accent" />
                         </div>
                         <h2 className="font-headline text-3xl font-bold text-primary">
