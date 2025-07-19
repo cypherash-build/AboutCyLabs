@@ -18,7 +18,6 @@ import { X, HelpCircle, Clock, Award } from "lucide-react";
 import ScrambledText from "../ui/ScrambledText";
 import "../ui/ScrambledText.css";
 
-
 type ProductId = "cypherkey" | "cypheri" | "cypherb" | "kitab";
 
 export default function Products() {
@@ -51,9 +50,11 @@ export default function Products() {
           blur={20}
         >
           <div className="mx-auto mb-12 max-w-2xl text-center">
-            <h2 className="font-headline text-3xl font-semibold text-primary md:text-4xl">
-              Our Portfolio of Solutions
-            </h2>
+            <ScrambledText>
+              <h2 className="font-headline text-3xl font-semibold text-primary md:text-4xl">
+                Our Portfolio of Solutions
+              </h2>
+            </ScrambledText>
             <p className="mt-4 text-lg text-muted-foreground">
               We identify technological vacuums and fill them with permanent,
               impactful deep tech solutions.
@@ -67,7 +68,7 @@ export default function Products() {
                   key="product-grid"
                   className="grid grid-cols-1 gap-8 md:grid-cols-2"
                   initial={{ opacity: 1 }}
-                  exit={{ opacity: 0, display: 'none' }}
+                  exit={{ opacity: 0, display: "none" }}
                   transition={{ duration: 0.2 }}
                 >
                   {products.map((product) => (
@@ -97,16 +98,16 @@ export default function Products() {
                             </CardTitle>
                           </div>
                           <CardDescription className="text-base flex-grow">
-                            {product.id === 'cypherkey' ? (
+                            {product.id === "cypherkey" ? (
                               <ScrambledText>
-                                {product.description[audience]}
+                                <p>{product.description[audience]}</p>
                               </ScrambledText>
                             ) : (
                               product.description[audience]
                             )}
                           </CardDescription>
                         </CardHeader>
-                        <CardContent className="flex flex-col justify-end pt-4">
+                        <CardContent className="flex h-full flex-col justify-end pt-4">
                           <div>
                             <h4 className="mb-2 text-sm font-semibold text-primary">
                               Target Audience
@@ -134,11 +135,19 @@ export default function Products() {
                   layoutId={`product-card-${selectedProduct}`}
                   className="absolute inset-0 z-10 overflow-hidden rounded-lg bg-card/80 backdrop-blur-lg"
                   initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1, transition: { duration: 0.4, ease: "easeOut" } }}
-                  exit={{ opacity: 0, scale: 0.95, transition: { duration: 0.3, ease: "easeIn" } }}
+                  animate={{
+                    opacity: 1,
+                    scale: 1,
+                    transition: { duration: 0.4, ease: "easeOut" },
+                  }}
+                  exit={{
+                    opacity: 0,
+                    scale: 0.95,
+                    transition: { duration: 0.3, ease: "easeIn" },
+                  }}
                 >
                   <div className="flex h-full flex-col">
-                    <div className="flex items-start justify-between p-6 sm:p-8 border-b border-border/50">
+                    <div className="flex items-start justify-between border-b border-border/50 p-6 sm:p-8">
                       <div className="flex items-center gap-4">
                         <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
                           <investorDetails.icon className="h-6 w-6 text-accent" />
@@ -166,13 +175,13 @@ export default function Products() {
                         transition: { delay: 0.2, duration: 0.4 },
                       }}
                     >
-                      <div className="space-y-8">
+                      <div className="space-y-12">
                         <div>
                           <h4 className="mb-4 flex items-center gap-3 font-headline text-xl font-semibold text-accent">
                             <HelpCircle className="h-5 w-5" />
                             What we solve and for whom?
                           </h4>
-                          <p className="text-muted-foreground whitespace-pre-line">
+                          <p className="whitespace-pre-line text-muted-foreground">
                             {investorDetails.q1}
                           </p>
                         </div>
@@ -181,7 +190,7 @@ export default function Products() {
                             <Clock className="h-5 w-5" />
                             Why now and why us?
                           </h4>
-                          <p className="text-muted-foreground whitespace-pre-line">
+                          <p className="whitespace-pre-line text-muted-foreground">
                             {investorDetails.q2}
                           </p>
                         </div>
@@ -190,7 +199,7 @@ export default function Products() {
                             <Award className="h-5 w-5" />
                             How are we different?
                           </h4>
-                          <p className="text-muted-foreground whitespace-pre-line">
+                          <p className="whitespace-pre-line text-muted-foreground">
                             {investorDetails.q3}
                           </p>
                         </div>

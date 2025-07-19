@@ -4,6 +4,8 @@ import { useAudience } from "@/components/landing/AudienceContext";
 import { content } from "@/lib/content";
 import { Lightbulb } from "lucide-react";
 import GlassSurface from "../ui/GlassSurface";
+import ScrambledText from "../ui/ScrambledText";
+import "../ui/ScrambledText.css";
 
 export default function About() {
   const { audience } = useAudience();
@@ -23,11 +25,13 @@ export default function About() {
                 <Lightbulb className="h-8 w-8 text-accent" />
               </div>
             </div>
-            <h2
-                className="font-headline text-3xl font-semibold text-primary md:text-4xl"
-            >
-              Our Core Mission
-            </h2>
+            <ScrambledText>
+              <h2
+                  className="font-headline text-3xl font-semibold text-primary md:text-4xl"
+              >
+                Our Core Mission
+              </h2>
+            </ScrambledText>
             <p className="mt-4 text-lg text-muted-foreground md:text-xl">
               {aboutContent.mission}
             </p>

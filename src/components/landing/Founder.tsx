@@ -2,6 +2,8 @@ import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import GlassSurface from "../ui/GlassSurface";
 import { CheckCircle } from "lucide-react";
+import ScrambledText from "../ui/ScrambledText";
+import "../ui/ScrambledText.css";
 
 export default function Founder() {
   const journeyPoints = [
@@ -24,9 +26,11 @@ export default function Founder() {
           blur={20}
         >
           <div className="w-full">
-            <h2 className="text-center font-headline text-3xl font-semibold text-primary md:text-4xl">
-              The Mind Behind The Mission
-            </h2>
+            <ScrambledText>
+              <h2 className="text-center font-headline text-3xl font-semibold text-primary md:text-4xl">
+                The Mind Behind The Mission
+              </h2>
+            </ScrambledText>
             <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-muted-foreground">
               Our innovation is driven by a unique blend of foresight and
               full-stack engineering, embodied by our founder.
@@ -62,14 +66,16 @@ export default function Founder() {
                 </Card>
               </div>
               <div className="lg:col-span-3">
-                <h4 className="font-headline text-2xl font-semibold text-primary">
-                  A Journey of Innovation
-                </h4>
+                <ScrambledText>
+                  <h4 className="font-headline text-2xl font-semibold text-primary">
+                    A Journey of Innovation
+                  </h4>
+                </ScrambledText>
                 <p className="mt-2 text-muted-foreground">
                   From childhood projects to deep tech leadership, the path has
                   always been about solving what's next.
                 </p>
-                <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
+                <div className="mt-8 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2">
                   {journeyPoints.map((point, index) => (
                     <div key={index} className="flex items-start gap-3">
                       <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-accent" />

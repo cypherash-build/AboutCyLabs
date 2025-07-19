@@ -32,9 +32,12 @@ const ScrambledText: React.FC<ScrambledTextProps> = ({
   const charsRef = useRef<HTMLElement[]>([]);
 
   useEffect(() => {
-    if (!rootRef.current) return;
+    if (!rootRef.current || !rootRef.current.firstChild) return;
+    
+    // Select the first child element of the root div to apply the effect
+    const elementToSplit = rootRef.current.firstChild as HTMLElement;
 
-    const split = SplitText.create(rootRef.current.querySelector("p"), {
+    const split = SplitText.create(elementToSplit, {
       type: "chars",
       charsClass: "char",
     });
@@ -82,7 +85,7 @@ const ScrambledText: React.FC<ScrambledTextProps> = ({
 
   return (
     <div ref={rootRef} className={`text-block ${className}`} style={style}>
-      <p>{children}</p>
+      {children}
     </div>
   );
 };
