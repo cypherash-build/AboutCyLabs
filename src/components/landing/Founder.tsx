@@ -71,7 +71,7 @@ export default function Founder() {
                 </p>
                 <div className="mt-8 grid grid-cols-1 gap-x-6 gap-y-4 text-left sm:grid-cols-2">
                   {journeyPoints.map((point, index) => (
-                    <div key={index} className="flex items-start gap-3">
+                    <div key={index} className="flex items-center gap-3">
                       <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-accent" />
                       <div>
                         <p className="font-semibold text-primary">

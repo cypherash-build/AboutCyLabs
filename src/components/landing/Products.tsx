@@ -45,7 +45,7 @@ export default function Products() {
     <section id="products">
       <div className="container mx-auto px-4">
         <GlassSurface
-          className="p-6 sm:p-8 md:p-12"
+          className="relative p-6 sm:p-8 md:p-12"
           backgroundOpacity={0.05}
           blur={20}
         >
@@ -61,12 +61,15 @@ export default function Products() {
 
           <div className="relative min-h-[450px]">
             <AnimatePresence>
-              {!selectedProduct ? (
+              {!selectedProduct && (
                 <motion.div
                   key="product-grid"
                   className="grid grid-cols-1 gap-8 md:grid-cols-2"
                   initial={{ opacity: 1 }}
-                  exit={{ opacity: 0, transition: { duration: 0.2 } }}
+                  exit={{
+                    opacity: 0,
+                    transition: { duration: 0.2 },
+                  }}
                 >
                   {products.map((product) => (
                     <motion.div
@@ -95,9 +98,9 @@ export default function Products() {
                             </CardTitle>
                           </div>
                           <CardDescription className="text-base min-h-[120px]">
-                            {product.id === "cypherkey" ? (
+                            {product.id === "cypherkey" && audience !== 'investor' ? (
                               <ScrambledText>
-                                {product.description[audience]}
+                                <p>{product.description[audience]}</p>
                               </ScrambledText>
                             ) : (
                               <p>{product.description[audience]}</p>
@@ -122,7 +125,7 @@ export default function Products() {
                     </motion.div>
                   ))}
                 </motion.div>
-              ) : null}
+              )}
             </AnimatePresence>
 
             <AnimatePresence>
@@ -174,18 +177,18 @@ export default function Products() {
                     >
                       <div className="space-y-12">
                         <div>
-                          <h4 className="mb-4 flex items-center gap-3 font-headline text-xl font-semibold text-accent">
-                            <HelpCircle className="h-5 w-5" />
-                            What we solve and for whom?
+                           <h4 className="mb-4 flex items-center gap-3 font-headline text-xl font-semibold text-accent">
+                            <HelpCircle className="h-5 w-5 flex-shrink-0" />
+                            <span>What we solve and for whom?</span>
                           </h4>
                           <p className="whitespace-pre-line text-muted-foreground">
                             {investorDetails.q1}
                           </p>
                         </div>
                         <div>
-                          <h4 className="mb-4 flex items-center gap-3 font-headline text-xl font-semibold text-accent">
-                            <Clock className="h-5 w-5" />
-                            Why now and why us?
+                           <h4 className="mb-4 flex items-center gap-3 font-headline text-xl font-semibold text-accent">
+                            <Clock className="h-5 w-5 flex-shrink-0" />
+                            <span>Why now and why us?</span>
                           </h4>
                           <p className="whitespace-pre-line text-muted-foreground">
                             {investorDetails.q2}
@@ -193,8 +196,8 @@ export default function Products() {
                         </div>
                         <div>
                           <h4 className="mb-4 flex items-center gap-3 font-headline text-xl font-semibold text-accent">
-                            <Award className="h-5 w-5" />
-                            How are we different?
+                            <Award className="h-5 w-5 flex-shrink-0" />
+                            <span>How are we different?</span>
                           </h4>
                           <p className="whitespace-pre-line text-muted-foreground">
                             {investorDetails.q3}
