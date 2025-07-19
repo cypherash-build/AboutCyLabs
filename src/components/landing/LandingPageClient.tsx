@@ -13,8 +13,8 @@ export default function LandingPageClient() {
   return (
     <AudienceProvider>
       <div className="flex min-h-screen flex-col bg-background">
-        <div className="relative z-10">
-          <Header />
+        <Header />
+        <div className="relative z-0 -mt-20">
           <main>
             <Hero />
             <About />
