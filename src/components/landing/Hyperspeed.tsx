@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, memo } from "react";
 import * as THREE from 'three';
 import { BloomEffect, EffectComposer, EffectPass, RenderPass, SMAAEffect, SMAAPreset } from 'postprocessing';
 
-const Hyperspeed = ({ effectOptions = {
+const HyperspeedInternal = ({ effectOptions = {
   onSpeedUp: () => { },
   onSlowDown: () => { },
   distortion: 'turbulentDistortion',
@@ -1174,4 +1174,5 @@ const Hyperspeed = ({ effectOptions = {
   );
 }
 
+const Hyperspeed = memo(HyperspeedInternal);
 export default Hyperspeed;

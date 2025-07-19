@@ -1,14 +1,14 @@
 // @ts-nocheck
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, memo } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText as GSAPSplitText } from "gsap/SplitText";
 
 gsap.registerPlugin(ScrollTrigger, GSAPSplitText);
 
-const SplitText = ({
+const SplitTextInternal = ({
   text,
   as: Component = 'div',
   className = "",
@@ -153,4 +153,5 @@ const SplitText = ({
   );
 };
 
+const SplitText = memo(SplitTextInternal);
 export default SplitText;
