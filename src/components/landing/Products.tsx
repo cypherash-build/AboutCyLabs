@@ -167,9 +167,9 @@ export default function Products() {
                           transition: { delay: 0.2, duration: 0.4 },
                         }}
                       >
-                        <div className="space-y-6">
+                        <div className="space-y-8">
                           <div>
-                            <h4 className="flex items-center gap-3 font-headline text-lg font-semibold text-accent mb-2">
+                            <h4 className="mb-3 flex items-center gap-3 font-headline text-xl font-semibold text-accent">
                               <HelpCircle className="h-5 w-5" />
                               What we solve and for whom?
                             </h4>
@@ -178,7 +178,7 @@ export default function Products() {
                             </p>
                           </div>
                           <div>
-                            <h4 className="flex items-center gap-3 font-headline text-lg font-semibold text-accent mb-2">
+                            <h4 className="mb-3 flex items-center gap-3 font-headline text-xl font-semibold text-accent">
                               <Clock className="h-5 w-5" />
                               Why now and why us?
                             </h4>
@@ -187,7 +187,7 @@ export default function Products() {
                             </p>
                           </div>
                           <div>
-                            <h4 className="flex items-center gap-3 font-headline text-lg font-semibold text-accent mb-2">
+                            <h4 className="mb-3 flex items-center gap-3 font-headline text-xl font-semibold text-accent">
                               <Award className="h-5 w-5" />
                               How are we different?
                             </h4>
