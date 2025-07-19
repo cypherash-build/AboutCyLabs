@@ -368,6 +368,7 @@ const Hyperspeed = ({ effectOptions = {
         setSize: (width: any, height: any, updateStyles?: boolean) => void;
         onMouseDown: (ev: any) => void;
         onMouseUp: (ev: any) => void;
+        onWindowResize: () => void;
 
       constructor(container: HTMLElement, options: any = {}) {
         this.options = options;
@@ -436,23 +437,66 @@ const Hyperspeed = ({ effectOptions = {
         this.speedUp = 0;
         this.timeOffset = 0;
 
-        this.tick = this.tick.bind(this);
-        this.init = this.init.bind(this);
-        this.setSize = this.setSize.bind(this);
-        this.onMouseDown = this.onMouseDown.bind(this);
-        this.onMouseUp = this.onMouseUp.bind(this);
+        this.tick = () => {
+          if (this.disposed || !this) return;
+          if (resizeRendererToDisplaySize(this.renderer, this.setSize)) {
+            const canvas = this.renderer.domElement;
+            this.camera.aspect = canvas.clientWidth / canvas.clientHeight;
+            this.camera.updateProjectionMatrix();
+          }
+          const delta = this.clock.getDelta();
+          this.render(delta);
+          this.update(delta);
+          requestAnimationFrame(this.tick);
+        };
+        this.init = () => {
+          this.initPasses();
+          const options = this.options;
+          this.road.init();
+          this.leftCarLights.init();
+
+          this.leftCarLights.mesh.position.setX(
+            -options.roadWidth / 2 - options.islandWidth / 2
+          );
+          this.rightCarLights.init();
+          this.rightCarLights.mesh.position.setX(
+            options.roadWidth / 2 + options.islandWidth / 2
+          );
+          this.leftSticks.init();
+          this.leftSticks.mesh.position.setX(
+            -(options.roadWidth + options.islandWidth / 2)
+          );
+
+          this.container.addEventListener("mousedown", this.onMouseDown);
+          this.container.addEventListener("mouseup", this.onMouseUp);
+          this.container.addEventListener("mouseout", this.onMouseUp);
+
+          this.tick();
+        };
+        this.setSize = (width: number, height: number, updateStyles: boolean | undefined = true) => {
+          this.composer.setSize(width, height, updateStyles);
+        };
+        this.onMouseDown = (ev: MouseEvent) => {
+          if (this.options.onSpeedUp) this.options.onSpeedUp(ev);
+          this.fovTarget = this.options.fovSpeedUp;
+          this.speedUpTarget = this.options.speedUp;
+        };
+        this.onMouseUp = (ev: MouseEvent) => {
+          if (this.options.onSlowDown) this.options.onSlowDown(ev);
+          this.fovTarget = this.options.fov;
+          this.speedUpTarget = 0;
+        };
+        this.onWindowResize = () => {
+          const width = this.container.offsetWidth;
+          const height = this.container.offsetHeight;
+
+          this.renderer.setSize(width, height);
+          this.camera.aspect = width / height;
+          this.camera.updateProjectionMatrix();
+          this.composer.setSize(width, height);
+        };
 
         window.addEventListener("resize", this.onWindowResize.bind(this));
-      }
-
-      onWindowResize() {
-        const width = this.container.offsetWidth;
-        const height = this.container.offsetHeight;
-
-        this.renderer.setSize(width, height);
-        this.camera.aspect = width / height;
-        this.camera.updateProjectionMatrix();
-        this.composer.setSize(width, height);
       }
 
       initPasses() {
@@ -501,43 +545,6 @@ const Hyperspeed = ({ effectOptions = {
           searchImage.src = SMAAEffect.searchImageDataURL;
           areaImage.src = SMAAEffect.areaImageDataURL;
         });
-      }
-
-      init() {
-        this.initPasses();
-        const options = this.options;
-        this.road.init();
-        this.leftCarLights.init();
-
-        this.leftCarLights.mesh.position.setX(
-          -options.roadWidth / 2 - options.islandWidth / 2
-        );
-        this.rightCarLights.init();
-        this.rightCarLights.mesh.position.setX(
-          options.roadWidth / 2 + options.islandWidth / 2
-        );
-        this.leftSticks.init();
-        this.leftSticks.mesh.position.setX(
-          -(options.roadWidth + options.islandWidth / 2)
-        );
-
-        this.container.addEventListener("mousedown", this.onMouseDown);
-        this.container.addEventListener("mouseup", this.onMouseUp);
-        this.container.addEventListener("mouseout", this.onMouseUp);
-
-        this.tick();
-      }
-
-      onMouseDown(ev: MouseEvent) {
-        if (this.options.onSpeedUp) this.options.onSpeedUp(ev);
-        this.fovTarget = this.options.fovSpeedUp;
-        this.speedUpTarget = this.options.speedUp;
-      }
-
-      onMouseUp(ev: MouseEvent) {
-        if (this.options.onSlowDown) this.options.onSlowDown(ev);
-        this.fovTarget = this.options.fov;
-        this.speedUpTarget = 0;
       }
 
       update(delta: number) {
@@ -608,23 +615,6 @@ const Hyperspeed = ({ effectOptions = {
           this.container.removeEventListener("mouseup", this.onMouseUp);
           this.container.removeEventListener("mouseout", this.onMouseUp);
         }
-      }
-
-      setSize(width: number, height: number, updateStyles: boolean | undefined = true) {
-        this.composer.setSize(width, height, updateStyles);
-      }
-
-      tick() {
-        if (this.disposed || !this) return;
-        if (resizeRendererToDisplaySize(this.renderer, this.setSize)) {
-          const canvas = this.renderer.domElement;
-          this.camera.aspect = canvas.clientWidth / canvas.clientHeight;
-          this.camera.updateProjectionMatrix();
-        }
-        const delta = this.clock.getDelta();
-        this.render(delta);
-        this.update(delta);
-        requestAnimationFrame(this.tick);
       }
     }
 
@@ -1169,7 +1159,7 @@ const Hyperspeed = ({ effectOptions = {
 
       const myApp = new App(container, options);
       appRef.current = myApp;
-      myApp.loadAssets().then(myApp.init);
+      myApp.loadAssets().then(() => myApp.init());
     })();
 
     return () => {
