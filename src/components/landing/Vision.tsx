@@ -12,7 +12,7 @@ export default function Vision() {
   const { sunshot, moonshot } = content.vision;
 
   return (
-    <section id="vision" className="bg-background">
+    <section id="vision" className="bg-transparent backdrop-blur-sm">
       <div className="container mx-auto px-4">
         <div className="mx-auto mb-16 max-w-2xl text-center">
           <h2 className="font-headline text-3xl font-semibold text-primary md:text-4xl">
@@ -35,7 +35,7 @@ export default function Vision() {
             </div>
             <div className="flex flex-col">
                 <Accordion type="single" collapsible defaultValue="item-1" className="w-full">
-                <AccordionItem value="item-1">
+                <AccordionItem value="item-1" className="border-b-secondary/50">
                     <AccordionTrigger className="text-left hover:no-underline">
                     <div className="flex items-center gap-4">
                         <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
@@ -44,12 +44,12 @@ export default function Vision() {
                         <span className="font-headline text-xl font-semibold text-primary">{sunshot.name}</span>
                     </div>
                     </AccordionTrigger>
-                    <AccordionContent className="pt-2 text-base text-muted-foreground">
+                    <AccordionContent className="pt-2 text-base text-muted-foreground bg-card/30 p-4 rounded-md">
                         <p className="font-medium text-primary/90">{sunshot.concept}</p>
                         <p className="mt-2">{sunshot.vision}</p>
                     </AccordionContent>
                 </AccordionItem>
-                <AccordionItem value="item-2">
+                <AccordionItem value="item-2" className="border-b-secondary/50">
                     <AccordionTrigger className="text-left hover:no-underline">
                      <div className="flex items-center gap-4">
                         <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
@@ -58,7 +58,7 @@ export default function Vision() {
                         <span className="font-headline text-xl font-semibold text-primary">{moonshot.name}</span>
                     </div>
                     </AccordionTrigger>
-                    <AccordionContent className="pt-2 text-base text-muted-foreground">
+                    <AccordionContent className="pt-2 text-base text-muted-foreground bg-card/30 p-4 rounded-md">
                         <p className="font-medium text-primary/90">{moonshot.concept}</p>
                         <p className="mt-2">{moonshot.vision}</p>
                     </AccordionContent>

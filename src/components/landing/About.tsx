@@ -9,7 +9,7 @@ export default function About() {
   const aboutContent = content.about[audience];
 
   return (
-    <section id="about" className="bg-card">
+    <section id="about" className="bg-card/10 backdrop-blur-sm">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-4xl text-center">
           <div className="mb-6 flex justify-center">

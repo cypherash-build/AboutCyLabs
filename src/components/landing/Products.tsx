@@ -16,7 +16,7 @@ export default function Products() {
   const products = content.products;
 
   return (
-    <section id="products" className="bg-background">
+    <section id="products" className="bg-transparent backdrop-blur-sm">
       <div className="container mx-auto px-4">
         <div className="mx-auto mb-16 max-w-2xl text-center">
           <h2 className="font-headline text-3xl font-semibold text-primary md:text-4xl">
@@ -28,7 +28,7 @@ export default function Products() {
         </div>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {products.map((product) => (
-            <Card key={product.id} className="flex flex-col overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1">
+            <Card key={product.id} className="flex flex-col overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1 bg-card/50">
               <CardHeader>
                 <div className="mb-4 flex items-center gap-4">
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">

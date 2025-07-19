@@ -14,7 +14,7 @@ export default function Founder() {
   ];
 
   return (
-    <section id="founder" className="bg-background">
+    <section id="founder" className="bg-transparent backdrop-blur-sm">
       <div className="container mx-auto px-4">
         <div className="text-center">
             <h2 className="font-headline text-3xl font-semibold text-primary md:text-4xl">
@@ -27,7 +27,7 @@ export default function Founder() {
 
         <div className="mt-16 grid grid-cols-1 items-center gap-12 lg:grid-cols-5">
             <div className="lg:col-span-2">
-                <Card className="overflow-hidden shadow-lg">
+                <Card className="overflow-hidden shadow-lg bg-card/50">
                     <CardContent className="p-0">
                         <div className="relative aspect-square">
                              <Image

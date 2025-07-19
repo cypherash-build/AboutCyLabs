@@ -10,7 +10,7 @@ export default function Impact() {
   const impactItems = content.impact[audience];
 
   return (
-    <section id="impact" className="bg-card">
+    <section id="impact" className="bg-card/10 backdrop-blur-sm">
       <div className="container mx-auto px-4">
         <div className="mx-auto mb-16 max-w-2xl text-center">
           <h2 className="font-headline text-3xl font-semibold text-primary md:text-4xl">
@@ -23,7 +23,7 @@ export default function Impact() {
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {impactItems.map((item, index) => (
-            <Card key={index} className="flex flex-col">
+            <Card key={index} className="flex flex-col bg-card/50">
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                 <CardTitle className="text-sm font-medium">
                   {item.title}
