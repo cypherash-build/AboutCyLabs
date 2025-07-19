@@ -3,7 +3,7 @@ import { KeyRound, Target, Shield, BookOpen, Building, HeartHandshake, Lightbulb
 export const content = {
   hero: {
     default: {
-      headline: "Shaping a Safer, Smarter Future",
+      headline: "Shaping a Safer,\nSmarter Future",
       subheadline: "Cypherash Labs is a deep tech company building permanent, impactful solutions to solve critical global challenges. We don't follow trends; we define the future.",
     },
     government: {
