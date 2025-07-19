@@ -1,4 +1,5 @@
 "use client";
+import { useState, useEffect } from 'react';
 import { AudienceProvider } from '@/components/landing/AudienceContext';
 import Header from '@/components/landing/Header';
 import Hero from '@/components/landing/Hero';
@@ -9,10 +10,25 @@ import Vision from '@/components/landing/Vision';
 import Impact from '@/components/landing/Impact';
 import Footer from '@/components/landing/Footer';
 import DarkVeil from './DarkVeil';
+import Loader from '../ui/Loader';
+import { AnimatePresence } from 'framer-motion';
 
 export default function LandingPageClient() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000); // Adjust delay as needed
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <AudienceProvider>
+      <AnimatePresence>
+        {loading && <Loader />}
+      </AnimatePresence>
       <div className="flex min-h-screen flex-col bg-background">
         <div className="hyperspeed-background">
           <DarkVeil />
