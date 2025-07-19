@@ -61,7 +61,7 @@ export default function Founder() {
                   </CardContent>
                 </Card>
               </div>
-              <div className="lg:col-span-3">
+              <div className="text-center lg:col-span-3 lg:text-left">
                 <h4 className="font-headline text-2xl font-semibold text-primary">
                   A Journey of Innovation
                 </h4>
@@ -69,7 +69,7 @@ export default function Founder() {
                   From childhood projects to deep tech leadership, the path has
                   always been about solving what's next.
                 </p>
-                <div className="mt-8 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2">
+                <div className="mt-8 grid grid-cols-1 gap-x-6 gap-y-4 text-left sm:grid-cols-2">
                   {journeyPoints.map((point, index) => (
                     <div key={index} className="flex items-start gap-3">
                       <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-accent" />

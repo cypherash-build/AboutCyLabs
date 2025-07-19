@@ -59,15 +59,14 @@ export default function Products() {
             </p>
           </div>
 
-          <div className="relative min-h-[400px]">
+          <div className="relative min-h-[450px]">
             <AnimatePresence>
-              {!selectedProduct && (
+              {!selectedProduct ? (
                 <motion.div
                   key="product-grid"
                   className="grid grid-cols-1 gap-8 md:grid-cols-2"
                   initial={{ opacity: 1 }}
-                  exit={{ opacity: 0, display: "none" }}
-                  transition={{ duration: 0.2 }}
+                  exit={{ opacity: 0, transition: { duration: 0.2 } }}
                 >
                   {products.map((product) => (
                     <motion.div
@@ -95,7 +94,7 @@ export default function Products() {
                               {product.name}
                             </CardTitle>
                           </div>
-                          <CardDescription className="text-base min-h-[100px]">
+                          <CardDescription className="text-base min-h-[120px]">
                             {product.id === "cypherkey" ? (
                               <ScrambledText>
                                 {product.description[audience]}
@@ -123,7 +122,7 @@ export default function Products() {
                     </motion.div>
                   ))}
                 </motion.div>
-              )}
+              ) : null}
             </AnimatePresence>
 
             <AnimatePresence>
