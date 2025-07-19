@@ -45,7 +45,6 @@ export default function Header() {
                 alt="Cypherash Labs Logo"
                 width={140}
                 height={40}
-                className="h-auto"
                 priority
               />
             </Link>
