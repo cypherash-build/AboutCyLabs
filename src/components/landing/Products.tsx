@@ -15,8 +15,6 @@ import { content } from "@/lib/content";
 import GlassSurface from "../ui/GlassSurface";
 import { AnimatePresence, motion } from "framer-motion";
 import { X, HelpCircle, Clock, Award } from "lucide-react";
-import ScrambledText from "../ui/ScrambledText";
-import "../ui/ScrambledText.css";
 
 type ProductId = "cypherkey" | "cypheri" | "cypherb" | "kitab";
 
@@ -98,13 +96,7 @@ export default function Products() {
                             </CardTitle>
                           </div>
                           <CardDescription className="text-base">
-                            {product.id === "cypherkey" ? (
-                              <ScrambledText>
-                                {product.description[audience]}
-                              </ScrambledText>
-                            ) : (
-                              product.description[audience]
-                            )}
+                            {product.description[audience]}
                           </CardDescription>
                         </CardHeader>
                         <CardContent className="flex flex-grow flex-col justify-end pt-4">
