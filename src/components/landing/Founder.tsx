@@ -8,6 +8,7 @@ export default function Founder() {
     { age: 12, achievement: "Created first soldered PCB" },
     { age: 13, achievement: "Made a webcam-based trackpad" },
     { age: 14, achievement: "Developed wireless electricity transmission" },
+    { age: 15, achievement: "Built a Green Hydrogen Generator" },
     { age: 16, achievement: "Engineered kinetic-powered shoes" },
     { age: "2018-2021", achievement: "Freelance Software Developer" },
     { age: 2021, achievement: "CTO at Mowen Technologies" },
