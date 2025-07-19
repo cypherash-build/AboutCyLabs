@@ -8,21 +8,27 @@ import Founder from '@/components/landing/Founder';
 import Vision from '@/components/landing/Vision';
 import Impact from '@/components/landing/Impact';
 import Footer from '@/components/landing/Footer';
+import Hyperspeed from './Hyperspeed';
 
 export default function LandingPageClient() {
   return (
     <AudienceProvider>
       <div className="flex min-h-screen flex-col bg-background">
-        <Header />
-        <main>
-          <Hero />
-          <About />
-          <Products />
-          <Founder />
-          <Vision />
-          <Impact />
-        </main>
-        <Footer />
+        <div className="hyperspeed-background">
+          <Hyperspeed />
+        </div>
+        <div className="relative z-10">
+          <Header />
+          <main>
+            <Hero />
+            <About />
+            <Products />
+            <Founder />
+            <Vision />
+            <Impact />
+          </main>
+          <Footer />
+        </div>
       </div>
     </AudienceProvider>
   );

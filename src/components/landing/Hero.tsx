@@ -11,7 +11,6 @@ import {
 import { useAudience, Audience } from "./AudienceContext";
 import { content } from "@/lib/content";
 import { Users } from "lucide-react";
-import Hyperspeed from "./Hyperspeed";
 
 export default function Hero() {
   const { audience, setAudience } = useAudience();
@@ -20,11 +19,8 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden bg-background pt-24 pb-20 text-center md:pt-40 md:pb-32"
+      className="relative bg-transparent pt-24 pb-20 text-center md:pt-40 md:pb-32"
     >
-      <div className="hyperspeed-background">
-        <Hyperspeed />
-      </div>
       <div className="container relative z-10 mx-auto px-4">
         <h1 className="font-headline text-4xl font-bold tracking-tight text-primary sm:text-5xl md:text-6xl lg:text-7xl">
           {heroContent.headline}
