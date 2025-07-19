@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import GlassSurface from "../ui/GlassSurface";
+import SplitText from "../ui/SplitText";
 
 export default function Founder() {
   const journeyPoints = [
@@ -24,9 +25,11 @@ export default function Founder() {
         >
           <div className="w-full">
             <div className="text-center mb-12">
-                <h2 className="font-headline text-3xl font-semibold text-primary md:text-4xl">
-                    The Mind Behind The Mission
-                </h2>
+                <SplitText
+                    as="h2"
+                    text="The Mind Behind The Mission"
+                    className="font-headline text-3xl font-semibold text-primary md:text-4xl"
+                />
                 <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
                     Our innovation is driven by a unique blend of foresight and full-stack engineering, embodied by our founder.
                 </p>

@@ -11,6 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import { useAudience } from "./AudienceContext";
 import { content } from "@/lib/content";
 import GlassSurface from "../ui/GlassSurface";
+import SplitText from "../ui/SplitText";
 
 export default function Products() {
   const { audience } = useAudience();
@@ -26,9 +27,11 @@ export default function Products() {
         >
           <div className="w-full">
             <div className="mx-auto mb-12 max-w-2xl text-center">
-              <h2 className="font-headline text-3xl font-semibold text-primary md:text-4xl">
-                Our Portfolio of Solutions
-              </h2>
+                <SplitText
+                    as="h2"
+                    text="Our Portfolio of Solutions"
+                    className="font-headline text-3xl font-semibold text-primary md:text-4xl"
+                />
               <p className="mt-4 text-lg text-muted-foreground">
                 We identify technological vacuums and fill them with permanent, impactful deep tech solutions.
               </p>
