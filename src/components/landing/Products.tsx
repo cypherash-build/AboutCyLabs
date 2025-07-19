@@ -14,7 +14,7 @@ import { useAudience } from "./AudienceContext";
 import { content } from "@/lib/content";
 import GlassSurface from "../ui/GlassSurface";
 import { AnimatePresence, motion } from "framer-motion";
-import { X, DollarSign, Target, Lightbulb, Briefcase } from "lucide-react";
+import { X, HelpCircle, Clock, Users, Award } from "lucide-react";
 
 type ProductId = "cypherkey" | "cypheri" | "cypherb" | "kitab";
 
@@ -57,28 +57,32 @@ export default function Products() {
                 impactful deep tech solutions.
               </p>
             </div>
-            
+
             <div className="relative min-h-[400px]">
               <AnimatePresence>
                 {!selectedProduct && (
                   <motion.div
+                    key="product-grid"
                     className="grid grid-cols-1 gap-8 md:grid-cols-2"
                     initial={{ opacity: 1 }}
-                    exit={{ opacity: 0, transition: { duration: 0.2 } }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
                   >
                     {products.map((product) => (
                       <motion.div
                         key={product.id}
                         layoutId={`product-card-${product.id}`}
                         onClick={() =>
-                          !selectedProduct && handleSelectProduct(product.id as ProductId)
+                          handleSelectProduct(product.id as ProductId)
                         }
                         className={`flex h-full flex-col overflow-hidden rounded-lg bg-card/50 transition-all ${
                           audience === "investor"
                             ? "cursor-pointer hover:-translate-y-1 hover:shadow-lg"
                             : ""
                         }`}
-                        whileHover={audience === 'investor' && !selectedProduct ? { scale: 1.02 } : {}}
+                        whileHover={
+                          audience === "investor" ? { scale: 1.02 } : {}
+                        }
                       >
                         <Card className="flex h-full flex-col border-0 bg-transparent">
                           <CardHeader>
@@ -118,20 +122,23 @@ export default function Products() {
               <AnimatePresence>
                 {selectedProduct && investorDetails && (
                   <motion.div
+                    key="product-detail"
                     layoutId={`product-card-${selectedProduct}`}
                     className="absolute inset-0 z-10 overflow-hidden rounded-lg bg-card/80 backdrop-blur-lg"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1, transition: { duration: 0.4 } }}
-                    exit={{ opacity: 0, transition: { duration: 0.3 } }}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1, transition: { duration: 0.4, ease: "easeOut" } }}
+                    exit={{ opacity: 0, scale: 0.95, transition: { duration: 0.3, ease: "easeIn" } }}
                   >
-                    <div className="flex h-full flex-col p-6 sm:p-8">
-                      <div className="mb-4 flex items-start justify-between">
-                          <div className="flex items-center gap-4">
-                              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
-                                  <investorDetails.icon className="h-6 w-6 text-accent" />
-                              </div>
-                              <h2 className="font-headline text-3xl font-bold text-primary">{investorDetails.name}</h2>
+                    <div className="flex h-full flex-col">
+                      <div className="flex items-start justify-between p-6 sm:p-8 border-b border-border/50">
+                        <div className="flex items-center gap-4">
+                          <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
+                            <investorDetails.icon className="h-6 w-6 text-accent" />
                           </div>
+                          <h2 className="font-headline text-3xl font-bold text-primary">
+                            {investorDetails.name}
+                          </h2>
+                        </div>
                         <Button
                           variant="ghost"
                           size="icon"
@@ -142,33 +149,44 @@ export default function Products() {
                         </Button>
                       </div>
 
-                      <motion.div 
-                          className="flex-grow overflow-y-auto pr-4"
-                          initial={{ opacity: 0, y: 20 }}
-                          animate={{ opacity: 1, y: 0, transition: { delay: 0.2, duration: 0.4 } }}
+                      <motion.div
+                        className="flex-grow overflow-y-auto p-6 sm:p-8"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{
+                          opacity: 1,
+                          y: 0,
+                          transition: { delay: 0.2, duration: 0.4 },
+                        }}
                       >
-                          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                              <div className="space-y-4">
-                                  <div className="space-y-2">
-                                      <h4 className="flex items-center gap-2 font-semibold text-accent"><Target />Problem</h4>
-                                      <p className="text-muted-foreground">{investorDetails.problem}</p>
-                                  </div>
-                                  <div className="space-y-2">
-                                      <h4 className="flex items-center gap-2 font-semibold text-accent"><Lightbulb />Solution</h4>
-                                      <p className="text-muted-foreground">{investorDetails.solution}</p>
-                                  </div>
-                              </div>
-                              <div className="space-y-4">
-                                  <div className="space-y-2">
-                                      <h4 className="flex items-center gap-2 font-semibold text-accent"><Briefcase />Market</h4>
-                                      <p className="text-muted-foreground">{investorDetails.market}</p>
-                                  </div>
-                                  <div className="space-y-2">
-                                      <h4 className="flex items-center gap-2 font-semibold text-accent"><DollarSign />Revenue Model</h4>
-                                      <p className="text-muted-foreground">{investorDetails.revenueModel}</p>
-                                  </div>
-                              </div>
+                        <div className="space-y-6">
+                          <div>
+                            <h4 className="flex items-center gap-3 font-headline text-lg font-semibold text-accent mb-2">
+                              <HelpCircle className="h-5 w-5" />
+                              What we solve and for whom?
+                            </h4>
+                            <p className="text-muted-foreground whitespace-pre-line">
+                              {investorDetails.q1}
+                            </p>
                           </div>
+                          <div>
+                            <h4 className="flex items-center gap-3 font-headline text-lg font-semibold text-accent mb-2">
+                              <Clock className="h-5 w-5" />
+                              Why now and why us?
+                            </h4>
+                            <p className="text-muted-foreground whitespace-pre-line">
+                              {investorDetails.q2}
+                            </p>
+                          </div>
+                          <div>
+                            <h4 className="flex items-center gap-3 font-headline text-lg font-semibold text-accent mb-2">
+                              <Award className="h-5 w-5" />
+                              How are we different?
+                            </h4>
+                            <p className="text-muted-foreground whitespace-pre-line">
+                              {investorDetails.q3}
+                            </p>
+                          </div>
+                        </div>
                       </motion.div>
                     </div>
                   </motion.div>

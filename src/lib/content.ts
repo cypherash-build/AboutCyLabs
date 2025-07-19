@@ -87,34 +87,30 @@ export const content = {
     cypherkey: {
       name: "Cypherkey",
       icon: KeyRound,
-      problem: "Existing encryption standards are vulnerable to quantum computers, which threaten to break most modern cryptography within the next decade, endangering global data security.",
-      solution: "A hardware-software solution providing quantum-resistant key distribution and data encryption, compliant with NIST's PQC standards, to future-proof digital communications.",
-      market: "Global Post-Quantum Cryptography market, projected to reach $9.5 billion by 2029. Initial focus on government, defense, and financial sectors.",
-      revenueModel: "Subscription-based licensing (SaaS) per secured endpoint, with additional revenue from hardware security module (HSM) integration and consulting services."
+      q1: `We are solving the existential threat of quantum computers to our most critical digital secrets. Today, virtually all digital communication and stored data security relies on classical encryption that is fundamentally vulnerable to future quantum computers. For sensitive government, military, and critical infrastructure data, this poses an unacceptable risk.\n\nCypherKey provides an uncompromisable, physics-based solution for cryptographic key distribution via terrestrial free-space towers. Our primary customers are government and military agencies, along with operators of critical national infrastructure who demand the highest level of future-proof security.`,
+      q2: `The threat of quantum computing is no longer theoretical; it's a rapidly approaching reality. Governments are already mandating quantum-resistant solutions. We're at an inflection point where the market need is urgent, and the core QKD technologies have matured enough for practical deployment.\n\nCypherash Labs is the right team because we combine deep expertise in quantum optics and cryptography with a pragmatic roadmap. Our agility as a specialized startup allows us to innovate faster than legacy players. We are passionate about securing the future of communication.`,
+      q3: `Our core differentiation is our focus on terrestrial free-space (tower-based) QKD, delivered as a service.\n\nBeyond Fiber: We address the critical need for secure links where fiber is impractical, costly, or vulnerable.\n\nBeyond PQC: Unlike Post-Quantum Cryptography (PQC), which relies on mathematical assumptions, CypherKey offers provable, physics-based security—a non-negotiable for our target clients.\n\nFrom Hardware to Service: Our long-term strategy is providing "quantum channels as a managed service," creating recurring revenue and lowering the barrier to entry for clients.`,
     },
     cypheri: {
         name: "Cypher-i",
         icon: Target,
-        problem: "Urban security operations are often reactive and resource-intensive, with slow response times to incidents and gaps in surveillance coverage.",
-        solution: "An autonomous drone network providing 24/7 aerial surveillance with on-board AI for real-time threat detection, incident reporting, and patrol automation.",
-        market: "Smart City and public safety market, a $250 billion industry. Targeting municipalities seeking to enhance security and operational efficiency.",
-        revenueModel: "Drone-as-a-Service (DaaS) model, with recurring monthly fees per drone for hardware, software, maintenance, and data management."
+        q1: "Urban security operations are often reactive and resource-intensive, with slow response times to incidents and gaps in surveillance coverage.",
+        q2: "An autonomous drone network providing 24/7 aerial surveillance with on-board AI for real-time threat detection, incident reporting, and patrol automation.",
+        q3: "Smart City and public safety market, a $250 billion industry. Targeting municipalities seeking to enhance security and operational efficiency. Drone-as-a-Service (DaaS) model, with recurring monthly fees per drone for hardware, software, maintenance, and data management."
     },
     cypherb: {
         name: "Cypher-b",
         icon: Shield,
-        problem: "Military and border reconnaissance missions are dangerous, costly, and often limited by human endurance and conventional aircraft capabilities.",
-        solution: "Stealth-capable, long-endurance reconnaissance drones with advanced ISR payloads, offering superior tactical awareness while minimizing risk to personnel.",
-        market: "Global military drone market, valued at over $17 billion. Targeting defense contracts for surveillance and reconnaissance operations.",
-        revenueModel: "Direct hardware sales combined with long-term service, support, and data analysis contracts with government defense and security agencies."
+        q1: "Military and border reconnaissance missions are dangerous, costly, and often limited by human endurance and conventional aircraft capabilities.",
+        q2: "Stealth-capable, long-endurance reconnaissance drones with advanced ISR payloads, offering superior tactical awareness while minimizing risk to personnel.",
+        q3: "Global military drone market, valued at over $17 billion. Targeting defense contracts for surveillance and reconnaissance operations. Direct hardware sales combined with long-term service, support, and data analysis contracts with government defense and security agencies."
     },
     kitab: {
         name: "Ki-Tab",
         icon: BookOpen,
-        problem: "Traditional education struggles with a one-size-fits-all approach, and existing EdTech solutions are often distracting and fail to deliver personalized learning effectively.",
-        solution: "A purpose-built, dual-screen e-ink tablet with an on-device AI tutor that provides personalized learning paths, interactive content, and real-time feedback, free from digital distractions.",
-        market: "Global EdTech market, projected to exceed $400 billion. Targeting K-12 public and private education systems on a national scale.",
-        revenueModel: "Vertically integrated model: Direct sales of the hardware (Ki-Tab) bundled with a recurring subscription for the AI-powered curriculum and platform access (SaaS)."
+        q1: "Traditional education struggles with a one-size-fits-all approach, and existing EdTech solutions are often distracting and fail to deliver personalized learning effectively.",
+        q2: "A purpose-built, dual-screen e-ink tablet with an on-device AI tutor that provides personalized learning paths, interactive content, and real-time feedback, free from digital distractions.",
+        q3: "Global EdTech market, projected to exceed $400 billion. Targeting K-12 public and private education systems on a national scale. Vertically integrated model: Direct sales of the hardware (Ki-Tab) bundled with a recurring subscription for the AI-powered curriculum and platform access (SaaS)."
     }
   },
   vision: {
