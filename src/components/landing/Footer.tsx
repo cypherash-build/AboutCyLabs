@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
           <div className="flex items-center gap-2">
              <Image
-              src="https://i.ibb.co/9vRwzXy/logo.png"
+              src="https://i.postimg.cc/sXP6Cxn1/image.png"
               alt="Cypherash Labs Logo"
               width={140}
               height={40}
