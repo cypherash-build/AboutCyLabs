@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import GlassSurface from "../ui/GlassSurface";
 import { CheckCircle } from "lucide-react";
+import SplitText from "../ui/SplitText";
 
 export default function Founder() {
   const journeyPoints = [
@@ -24,9 +25,11 @@ export default function Founder() {
           blur={20}
         >
           <div className="mx-auto mb-12 max-w-2xl text-center">
-            <h2 className="font-headline text-3xl font-semibold text-primary md:text-4xl">
-              The Mind Behind The Mission
-            </h2>
+            <SplitText
+              text="The Mind Behind The Mission"
+              className="font-headline text-3xl font-semibold text-primary md:text-4xl"
+              splitType="words"
+            />
             <p className="mt-4 text-lg text-muted-foreground">
               Our innovation is driven by a unique blend of foresight and
               full-stack engineering, embodied by our founder.
@@ -74,8 +77,8 @@ export default function Founder() {
               </div>
               <div className="mt-8 space-y-4">
                 {journeyPoints.map((point, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 flex-shrink-0 text-accent" />
+                  <div key={index} className="flex items-start gap-3">
+                    <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-accent" />
                     <div>
                       <p className="font-semibold text-primary">
                         {point.achievement}

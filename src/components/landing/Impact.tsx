@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useAudience } from "./AudienceContext";
 import { content } from "@/lib/content";
 import GlassSurface from "../ui/GlassSurface";
+import SplitText from "../ui/SplitText";
 
 export default function Impact() {
   const { audience } = useAudience();
@@ -18,9 +19,11 @@ export default function Impact() {
           blur={20}
         >
           <div className="mx-auto mb-12 max-w-2xl text-center">
-            <h2 className="font-headline text-3xl font-semibold text-primary md:text-4xl">
-              Measurable & Meaningful Impact
-            </h2>
+            <SplitText
+              text="Measurable & Meaningful Impact"
+              className="font-headline text-3xl font-semibold text-primary md:text-4xl"
+              splitType="words"
+            />
             <p className="mt-4 text-lg text-muted-foreground">
               We are committed to delivering solutions that create tangible,
               positive change across society and industries.

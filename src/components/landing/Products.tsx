@@ -15,6 +15,7 @@ import { content } from "@/lib/content";
 import GlassSurface from "../ui/GlassSurface";
 import { AnimatePresence, motion } from "framer-motion";
 import { X, HelpCircle, Clock, Award } from "lucide-react";
+import SplitText from "../ui/SplitText";
 
 type ProductId = "cypherkey" | "cypheri" | "cypherb" | "kitab";
 
@@ -48,9 +49,11 @@ export default function Products() {
           blur={20}
         >
           <div className="mx-auto mb-12 max-w-2xl text-center">
-            <h2 className="font-headline text-3xl font-semibold text-primary md:text-4xl">
-              Our Portfolio of Solutions
-            </h2>
+            <SplitText
+              text="Our Portfolio of Solutions"
+              className="font-headline text-3xl font-semibold text-primary md:text-4xl"
+              splitType="words"
+            />
             <p className="mt-4 text-lg text-muted-foreground">
               We identify technological vacuums and fill them with permanent,
               impactful deep tech solutions.

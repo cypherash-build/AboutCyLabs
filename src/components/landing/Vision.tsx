@@ -8,6 +8,7 @@ import { BrainCircuit, Cpu } from "lucide-react";
 import Image from "next/image";
 import { content } from "@/lib/content";
 import GlassSurface from "../ui/GlassSurface";
+import SplitText from "../ui/SplitText";
 
 export default function Vision() {
   const { sunshot, moonshot } = content.vision;
@@ -21,9 +22,11 @@ export default function Vision() {
           blur={20}
         >
           <div className="mx-auto mb-12 max-w-2xl text-center">
-            <h2 className="font-headline text-3xl font-semibold text-primary md:text-4xl">
-              Pioneering The Next Frontier
-            </h2>
+            <SplitText
+              text="Pioneering The Next Frontier"
+              className="font-headline text-3xl font-semibold text-primary md:text-4xl"
+              splitType="words"
+            />
             <p className="mt-4 text-lg text-muted-foreground">
               Our long-term vision extends beyond current problems. We are building the foundational technologies for tomorrow's world.
             </p>
