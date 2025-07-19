@@ -1,4 +1,3 @@
-// @ts-nocheck
 "use client"
 
 import {
@@ -361,7 +360,9 @@ const MergedPlanes = forwardRef<
     [count, width, height]
   );
   useFrame((_, delta) => {
-    mesh.current.material.uniforms.time.value += 0.1 * delta;
+    if(mesh.current) {
+        mesh.current.material.uniforms.time.value += 0.1 * delta;
+    }
   });
   return <mesh ref={mesh} geometry={geometry} material={material} />;
 });
