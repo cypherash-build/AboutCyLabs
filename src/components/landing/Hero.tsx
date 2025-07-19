@@ -27,8 +27,7 @@ export default function Hero() {
         <SplitText
           text={heroContent.headline}
           className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl lg:text-7xl"
-          splitType="chars"
-          delay={20}
+          splitType="words"
           textAlign="center"
         />
         <p className="mt-6 max-w-3xl text-lg text-muted-foreground md:text-xl">
