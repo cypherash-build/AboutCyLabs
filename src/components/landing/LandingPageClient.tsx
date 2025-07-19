@@ -8,22 +8,28 @@ import Founder from '@/components/landing/Founder';
 import Vision from '@/components/landing/Vision';
 import Impact from '@/components/landing/Impact';
 import Footer from '@/components/landing/Footer';
+import DarkVeil from './DarkVeil';
 
 export default function LandingPageClient() {
   return (
     <AudienceProvider>
       <div className="flex min-h-screen flex-col bg-background">
-        <Header />
-        <div className="relative z-0 -mt-20">
-          <main>
-            <Hero />
-            <About />
-            <Products />
-            <Founder />
-            <Vision />
-            <Impact />
-          </main>
-          <Footer />
+        <div className="hyperspeed-background">
+          <DarkVeil />
+        </div>
+        <div className="relative z-10">
+          <Header />
+          <div className="relative z-0 -mt-20">
+            <main>
+              <Hero />
+              <About />
+              <Products />
+              <Founder />
+              <Vision />
+              <Impact />
+            </main>
+            <Footer />
+          </div>
         </div>
       </div>
     </AudienceProvider>
