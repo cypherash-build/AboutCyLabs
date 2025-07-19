@@ -15,6 +15,7 @@ const Footer = () => {
               alt="Cypherash Labs Logo"
               width={140}
               height={40}
+              className="h-auto"
             />
           </div>
           <p className="text-center text-sm text-primary-foreground/80">
