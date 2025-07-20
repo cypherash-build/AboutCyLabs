@@ -6,17 +6,17 @@ import SplitText from "../ui/SplitText";
 
 export default function Founder() {
   const journeyPoints = [
-    { age: "Age 12", achievement: "Created first soldered PCB" },
-    { age: "Age 13", achievement: "Made a webcam-based trackpad" },
-    { age: "Age 14", achievement: "Developed wireless electricity transmission" },
-    { age: "Age 15", achievement: "Built a Green Hydrogen Generator" },
-    { age: "Age 16", achievement: "Engineered kinetic-powered shoes" },
-    { age: "2018-2021", achievement: "Freelance Software Developer" },
-    { age: "2021", achievement: "CTO at Mowen Technologies" },
-    { age: "2022", achievement: "Created Spadework, an IT SaaS team for businesses" },
-    { age: "2022-2023", achievement: "Started Cypherash Enterprises, an asset management company" },
-    { age: "2024", achievement: "Built \"Take it\", a super app for quick commerce" },
     { age: "2024-Present", achievement: "CEO at Cypherash Labs" },
+    { age: "2024", achievement: "Built \"Take it\", a super app for quick commerce" },
+    { age: "2022-2023", achievement: "Started Cypherash Enterprises, an asset management company" },
+    { age: "2022", achievement: "Created Spadework, an IT SaaS team for businesses" },
+    { age: "2021", achievement: "CTO at Mowen Technologies" },
+    { age: "2018-2021", achievement: "Freelance Software Developer" },
+    { age: "Age 16", achievement: "Engineered kinetic-powered shoes" },
+    { age: "Age 15", achievement: "Built a Green Hydrogen Generator" },
+    { age: "Age 14", achievement: "Developed wireless electricity transmission" },
+    { age: "Age 13", achievement: "Made a webcam-based trackpad" },
+    { age: "Age 12", achievement: "Created first soldered PCB" },
   ];
 
   return (
