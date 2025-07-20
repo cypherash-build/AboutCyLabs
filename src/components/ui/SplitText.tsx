@@ -6,7 +6,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText as GSAPSplitText } from "gsap/SplitText";
 
-gsap.registerPlugin(ScrollTrigger, GSAPSplitText);
+gsap.registerPlugin(ScrollTrigger);
 
 export interface SplitTextProps {
   text: string;
@@ -29,7 +29,7 @@ const SplitText: React.FC<SplitTextProps> = ({
   delay = 100,
   duration = 0.6,
   ease = "power3.out",
-  splitType = "chars",
+  splitType = "words",
   from = { opacity: 0, y: 40 },
   to = { opacity: 1, y: 0 },
   threshold = 0.1,
@@ -43,6 +43,8 @@ const SplitText: React.FC<SplitTextProps> = ({
 
   useEffect(() => {
     if (typeof window === "undefined" || !ref.current || !text) return;
+    
+    gsap.registerPlugin(GSAPSplitText);
 
     const el = ref.current;
     
@@ -160,6 +162,7 @@ const SplitText: React.FC<SplitTextProps> = ({
         overflow: "hidden",
         whiteSpace: "normal",
         wordWrap: "break-word",
+        display: "block",
       }}
     >
       {text}
