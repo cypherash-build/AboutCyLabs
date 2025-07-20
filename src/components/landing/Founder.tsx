@@ -13,6 +13,9 @@ export default function Founder() {
     { age: "Age 16", achievement: "Engineered kinetic-powered shoes" },
     { age: "2018-2021", achievement: "Freelance Software Developer" },
     { age: "2021", achievement: "CTO at Mowen Technologies" },
+    { age: "2022", achievement: "Created Spadework, an IT SaaS team for businesses" },
+    { age: "2022-2023", achievement: "Started Cypherash Enterprises, an asset management company" },
+    { age: "2024", achievement: "Built \"Take it\", a super app for quick commerce" },
     { age: "2024-Present", achievement: "CEO at Cypherash Labs" },
   ];
 
